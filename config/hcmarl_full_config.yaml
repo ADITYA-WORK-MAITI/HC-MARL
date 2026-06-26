@@ -1,0 +1,193 @@
+# HC-MARL Full Training Configuration
+# Headline grid: 2M steps, N=6 workers, 10 seeds headline / 10 seeds ablation
+
+environment:
+  n_workers: 6
+  max_steps: 480        # 8-hour shift at 1-min resolution
+  dt: 1.0               # 1 minute per step
+  kappa: 1.0             # disagreement utility scaling
+
+  muscle_groups:
+    shoulder: {F: 0.01820, R: 0.00168, r: 15}
+    ankle:    {F: 0.00589, R: 0.00058, r: 15}
+    knee:     {F: 0.01500, R: 0.00149, r: 15}
+    elbow:    {F: 0.00912, R: 0.00094, r: 15}
+    trunk:    {F: 0.00755, R: 0.00075, r: 15}
+    grip:     {F: 0.00980, R: 0.00064, r: 30}  # Looft et al. (2018) Table 2: r=30 for hand grip
+
+  theta_max:
+    # Under Frey-Law et al. 2012 Table 1 values (above), the rest-phase
+    # floor theta_min_max = F/(F + R*r) per Eq 26 is:
+    #   shoulder 41.9% | ankle 40.4% | knee 40.2% | elbow 39.3% |
+    #   trunk 40.2%    | grip 33.8%.
+    # theta_max MUST satisfy theta_max >= theta_min_max (Eq 26).
+    # %MVC peak ceilings are engineering design values in the peak-force
+    # region of ACGIH TLV for Hand Activity (NPF~3/10 action line, higher
+    # for rest-punctuated work) and below the >50% "forceful" threshold of
+    # ISO 11228-3. NIOSH RLE calibration (heavy_lift, carry) in
+    # scripts/niosh_calibration.py. Time-weighted mean grip must stay below
+    # 0.17 (Byström & Fransson-Hall 1994 intermittent ceiling) -- enforced
+    # by duty cycle, not theta_max alone.
+    shoulder: 0.70   # margin 28.1pp over theta_min_max
+    ankle: 0.80      # margin 39.6pp
+    knee: 0.60       # margin 19.8pp
+    elbow: 0.45      # margin  5.7pp
+    trunk: 0.65      # margin 24.8pp
+    grip: 0.45       # margin 11.2pp
+
+  # Task demand profiles: fraction of MVC per muscle group per task.
+  # PER-MUSCLE %MVC SOURCES (warehouse/grocery-handling EMG literature,
+  # all open-access unless noted):
+  #   Trunk (erector spinae longissimus):
+  #     - Skals et al. 2021 Applied Ergonomics 92:103340 (CC-BY) — 17
+  #       supermarket workers, 43-71% MVC across lift heights.
+  #     - Skovlund et al. 2022a IJERPH 19(5):3030 — 64 workers, 95th-pctile
+  #       %MVC stratified by height and load mass.
+  #     - Koblauch 2016 Dan Med J 63(4):B5233 — baggage handlers, stooped
+  #       lifts (treats observed >100% EMGmax as MVIC underestimate, not
+  #       supra-maximal).
+  #   Shoulder (upper trapezius / deltoid):
+  #     - Skals 2021 — trapezius descendens 47-59% MVC, high-shelf lifts.
+  #     - Skovlund et al. 2022b Sci Rep 12:934 — 75 workers x 13 tasks,
+  #       neck/shoulder %MVC by department.
+  #     - Kao et al. 2015 PLOS ONE 10(10):e0140792 — push/pull trapezius
+  #       35-54% MVC (only open-access clean push/pull table we found).
+  #   Forearm / grip:
+  #     - Kao 2015 — flexor/extensor digitorum 32-63% MVC during push/pull.
+  #     - PEAK ceiling: grip theta_max=0.45 (ACGIH TLV for Hand Activity
+  #       peak-force region; below ISO 11228-3 "forceful" >50%).
+  #     - MEAN ceiling: time-weighted mean grip MUST stay <0.17 MVC (Byström
+  #       & Fransson-Hall 1994 Human Factors 36(1):158-171, seven-subject
+  #       physiological-criterion study) -- enforced by duty cycle.
+  #   Knee, Ankle:
+  #     - NO freely-accessible warehouse-context %MVC source exists for
+  #       these muscle groups. Values below are engineering extrapolations
+  #       from laboratory lifting-biomechanics literature (Silvetti 2015
+  #       Work 51:261-271 [paywalled]; Lavender 2021 Applied Ergonomics
+  #       97:103532 [paywalled]). Acknowledged as a scope limitation.
+  #   Heavy_lift and carry corners:
+  #     - Calibrated via scripts/niosh_calibration.py (Waters et al. 1993
+  #       Ergonomics 36(7):749-776, NIOSH RLE, LI=1.38 and 0.79 resp.).
+  # Papers reporting only N, Nm, %RVE, or psychophysical kg (rather than
+  # %MVC) are intentionally excluded; only %MVC sources are listed above.
+  tasks:
+    heavy_lift:     {shoulder: 0.45, ankle: 0.10, knee: 0.40, elbow: 0.30, trunk: 0.50, grip: 0.55}
+    light_sort:     {shoulder: 0.10, ankle: 0.05, knee: 0.05, elbow: 0.15, trunk: 0.10, grip: 0.20}
+    carry:          {shoulder: 0.25, ankle: 0.20, knee: 0.25, elbow: 0.20, trunk: 0.30, grip: 0.45}
+    overhead_reach: {shoulder: 0.55, ankle: 0.05, knee: 0.10, elbow: 0.35, trunk: 0.15, grip: 0.30}
+    push_cart:      {shoulder: 0.20, ankle: 0.15, knee: 0.20, elbow: 0.15, trunk: 0.25, grip: 0.40}
+    rest:           {shoulder: 0.00, ankle: 0.00, knee: 0.00, elbow: 0.00, trunk: 0.00, grip: 0.00}
+
+training:
+  total_steps: 2000000
+  eval_interval: 50000
+  checkpoint_interval: 100000
+  n_eval_episodes: 10
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  # cudnn.deterministic=True gives bit-exact reproducibility at ~1.5x
+  # slowdown. Keep True for paper runs. Flip to False only for throughput
+  # experiments where per-seed variance is acceptable.
+  deterministic: true
+
+algorithm:
+  lr_actor: 0.0003
+  lr_critic: 0.001
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.2
+  entropy_coeff: 0.05
+  # Linear anneal of entropy_coeff -> entropy_coeff_final over total_steps.
+  # Prevents policy thrashing late in training. Omit key for constant entropy.
+  entropy_coeff_final: 0.01
+  max_grad_norm: 0.5
+  n_epochs: 10
+  batch_size: 256
+  hidden_dim: 64
+  critic_hidden_dim: 128
+
+ecbf:
+  enabled: true        # HCMARL safety filter live by default
+  alpha1: 0.05
+  alpha2: 0.05
+  alpha3: 0.1
+  kp: 1.0
+
+logging:
+  use_wandb: false
+  project_name: "hcmarl"
+  log_interval: 10
+  save_interval: 50
+
+# MMICRL CFDE type discovery (math doc Sec 4, Remark 7.2).
+# Pre-trains on WSD4FEDSRM calibrated profiles; per-type theta_max
+# thresholds are injected into the env before RL begins.
+# rescale_to_floor=true: monotonic per-muscle rescale of raw MMICRL theta
+#   into [floor_m, 1.0] preserving cross-type ordering (Eq 26 feasibility).
+#   Raw thetas are typically below floor on single-muscle Path G demos,
+#   so hard-clamping would wipe out the MMICRL contribution. See
+#   hcmarl.utils.build_per_worker_theta_max for details.
+# mi_collapse_threshold: if MMICRL mutual_information < this value,
+#   latent types are treated as non-informative and effective theta
+#   falls back to the floor for every type (warning logged at train time).
+mmicrl:
+  enabled: true
+  n_types: 3              # initial guess; overridden by auto-selection below
+  auto_select_k: true     # data-driven K selection across k_range
+  k_range: [1, 5]
+  # Watanabe 2013 shows BIC is invalid for normalizing flows (singular Fisher
+  # information). Default to held-out NLL — asymptotically valid for singular
+  # models (Gelman-Hwang-Vehtari 2014). Alternatives:
+  #   bic        — Bayesian information criterion (legacy)
+  #   waic       — Widely-Applicable Information Criterion (Watanabe 2010)
+  k_selection: heldout_nll
+  heldout_frac: 0.2
+  n_iterations: 150
+  n_episodes_per_worker: 3
+  lambda1: 1.0
+  lambda2: 1.0
+  hidden_dims: [64, 64]
+  use_fixed_theta: false
+  rescale_to_floor: true
+  # If MMICRL mutual_information falls below this threshold, latent types
+  # are treated as non-informative and effective theta falls back to the
+  # per-muscle floor (warning logged at train time).
+  mi_collapse_threshold: 0.01
+
+  # ---------------------------------------------------------------------
+  # ceiling_source: how per-worker theta_max is computed (Method selection)
+  # ---------------------------------------------------------------------
+  #   "mmicrl_rescale" (default, legacy): consume MMICRL theta_per_type
+  #       (90th-pctile MF per type) and rescale into [floor, 1]. On Path G
+  #       MI collapses to 0 and every worker gets the config floor.
+  #   "F_anchored" (recommended): compute per-worker theta_max by
+  #       standardising each worker's calibrated fatigue rate F against
+  #       the population F distribution and applying a one-sided
+  #       reduction: higher F -> stricter ceiling; below-mean F gets the
+  #       config default (never relaxed). Bounded by Eq 26 feasibility.
+  #       Does NOT depend on MMICRL's theta_per_type output. MMICRL is
+  #       still run for type discovery / MI diagnostic.
+  #   "config_only": ignore MMICRL entirely; every worker gets the flat
+  #       config default. Diagnostic/ablation option.
+  ceiling_source: mmicrl_rescale     # default; set to "F_anchored" to
+                                     # use the F-anchored construction.
+  F_anchor_alpha: 0.05               # ceiling delta per 1 SD of F
+  F_anchor_z_clip: 2.0               # outlier clamp on standardised F
+  F_anchor_epsilon: 0.005            # margin above per-worker Eq 26 floor
+
+# ---------------------------------------------------------------------
+# Option X: per-worker type-conditioned policy
+# ---------------------------------------------------------------------
+# When enabled, each worker's observation is augmented with a one-hot
+# encoding of its MMICRL-discovered latent type z. The policy/critic see
+# the augmented obs and can condition behavior on z. Only applies to
+# HCMARL; baselines (MAPPO/IPPO/MAPPO-Lag) ignore the flag.
+#
+# MI-collapse fallback: when MMICRL mutual_information < mmicrl.mi_collapse_threshold
+# (default 0.01), every worker is assigned type 0 and obs gains a constant
+# one-hot [1.0]; the policy learns to ignore it (graceful single-type
+# behavior). This keeps obs_dim stable across runs and is the correct
+# degenerate case on Path G real data (K=5 found by NLL but MI=0 -> not modal).
+#
+# Default: disabled for backward compatibility. Flip to true to activate.
+type_conditioning:
+  enabled: false

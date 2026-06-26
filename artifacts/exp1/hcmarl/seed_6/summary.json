@@ -1,0 +1,9 @@
+{
+  "method": "hcmarl",
+  "seed": 6,
+  "total_episodes": 4167,
+  "total_steps": 2000160,
+  "best_reward": -1281.1619627838963,
+  "wall_time_seconds": 9110.3480386734,
+  "wall_time_hours": 2.5306522329648335
+}

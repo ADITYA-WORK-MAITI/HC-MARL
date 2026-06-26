@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "HC-MARL: Human-Centric Multi-Agent Reinforcement Learning"
+message: "If you use this code, please cite the accompanying paper."
+authors:
+  - given-names: "Aditya"
+    family-names: "Maiti"
+    affiliation: "USAR, Guru Gobind Singh Indraprastha University, Delhi, India"
+  - given-names: "Amrit Pal"
+    family-names: "Singh"
+    affiliation: "USAR, Guru Gobind Singh Indraprastha University, Delhi, India"
+  - given-names: "Amar"
+    family-names: "Arora"
+    affiliation: "USAR, Guru Gobind Singh Indraprastha University, Delhi, India"
+  - given-names: "Arshpreet"
+    family-names: "Kaur"
+    affiliation: "Department of Computer Science and Engineering, Manipal University, Jaipur, India"
+abstract: "Code accompanying the paper 'Fatigue-Aware Cooperative Multi-Agent RL on a Calibrated 3CC-r Warehouse Benchmark: An Empirical Audit of Four Modular Components'."
+license: MIT

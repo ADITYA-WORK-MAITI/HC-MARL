@@ -1,0 +1,1680 @@
+{
+  "description": "Pre-computed WSD4FEDSRM worker profiles (Path G calibration)",
+  "source": "Zenodo 8415066 (Borg endurance times, 34 subjects, dynamic IR at 35/45/55% MVIC)",
+  "calibration_method": "1D grid search on F (R fixed at 0.02, r=15)",
+  "n_workers": 34,
+  "F_range": [
+    0.4370456580550425,
+    2.624021023409737
+  ],
+  "non_shoulder_source": "Frey-Law 2012 Table 1 POPULATION_FR (v2 corrected), correlated sampling rho=0.5",
+  "seed": 42,
+  "profiles": [
+    {
+      "worker_id": 0,
+      "source_subject": "subject_1",
+      "muscles": {
+        "shoulder": {
+          "F": 1.2793334212185399,
+          "R": 0.022485776934998283,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.007323583237955913,
+          "R": 0.00033646166321652025,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.013868903161347198,
+          "R": 0.001015606789547327,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.007337919858708509,
+          "R": 0.000637386597014613,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006436781280548974,
+          "R": 0.0009670651326393468,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.0145708810021039,
+          "R": 0.0004731220650623601,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 1,
+      "source_subject": "subject_2",
+      "muscles": {
+        "shoulder": {
+          "F": 0.8487828919329824,
+          "R": 0.01760627743066738,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005352252015826624,
+          "R": 0.000253116276305579,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.0124063480232072,
+          "R": 0.0016164428944420144,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.007706237328726404,
+          "R": 0.0009953552936928752,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.005318686048120262,
+          "R": 0.0006662471022739659,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.009687041791527684,
+          "R": 0.0005496945792122703,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 2,
+      "source_subject": "subject_3",
+      "muscles": {
+        "shoulder": {
+          "F": 0.7316696911916097,
+          "R": 0.023832407963562254,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.003420316143556423,
+          "R": 0.0005809469915887942,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01972169637365403,
+          "R": 0.0014796754500643456,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.007964194681762507,
+          "R": 0.00120032165020792,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006987155777238221,
+          "R": 0.0009720411482040704,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.007183423448147238,
+          "R": 0.0009073837323613112,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 3,
+      "source_subject": "subject_4",
+      "muscles": {
+        "shoulder": {
+          "F": 2.1383599746217516,
+          "R": 0.03339059760182768,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.008732071466024335,
+          "R": 0.000575269297464095,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.019678627433162517,
+          "R": 0.0013443163479512788,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.011243396748621133,
+          "R": 0.0015278984129811527,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006837355460116777,
+          "R": 0.0006121611362858309,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.016069065239896783,
+          "R": 0.0008129465311317936,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 4,
+      "source_subject": "subject_5",
+      "muscles": {
+        "shoulder": {
+          "F": 1.231789052603247,
+          "R": 0.016967740795700962,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005686177373412252,
+          "R": 0.00047953503037772763,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.009156125626656415,
+          "R": 0.0013693710718994936,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.008477108890020194,
+          "R": 0.0024889685520253016,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.0066524514209120676,
+          "R": 0.0005414041518954934,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.014441972696852219,
+          "R": 0.0005990529373190207,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 5,
+      "source_subject": "subject_6",
+      "muscles": {
+        "shoulder": {
+          "F": 0.8787639344404101,
+          "R": 0.016967848116993096,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0035319955799209923,
+          "R": 0.00040809330528225054,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01330121460100229,
+          "R": 0.0035734729931139572,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.009337387131759224,
+          "R": 0.0006273139962644131,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.010328149140317126,
+          "R": 0.0008139375897348209,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.010251369145001028,
+          "R": 0.0005272774719501043,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 6,
+      "source_subject": "subject_7",
+      "muscles": {
+        "shoulder": {
+          "F": 1.1512734141713183,
+          "R": 0.034121204180971705,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005075224293698906,
+          "R": 0.0008092256395724457,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.013837321385895681,
+          "R": 0.0015538538299271643,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.00672908560498103,
+          "R": 0.0010510489034478993,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.0053080012684939915,
+          "R": 0.0009917513581517725,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.010408231261595298,
+          "R": 0.0005651663708740816,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 7,
+      "source_subject": "subject_8",
+      "muscles": {
+        "shoulder": {
+          "F": 1.193787610919737,
+          "R": 0.02495761368325357,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006313963504455872,
+          "R": 0.0002730353549219752,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01460515692337303,
+          "R": 0.0008819051208527846,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.008463882322852468,
+          "R": 0.0011491074924851346,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.012720491466999691,
+          "R": 0.0010365194727039225,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.00987966819630367,
+          "R": 0.0007473579879850079,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 8,
+      "source_subject": "subject_9",
+      "muscles": {
+        "shoulder": {
+          "F": 1.1475345081392385,
+          "R": 0.015497144412556396,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006188063158011318,
+          "R": 0.0004642689099587846,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.019405662985701552,
+          "R": 0.0018482711746597164,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.00995181941892506,
+          "R": 0.0008486206810212418,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.004964194435527866,
+          "R": 0.000577847788502127,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.007357678042260055,
+          "R": 0.0013305624212556373,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 9,
+      "source_subject": "subject_10",
+      "muscles": {
+        "shoulder": {
+          "F": 0.7430042695814638,
+          "R": 0.022886454929979153,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.004060101358149447,
+          "R": 0.000681617282087459,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.015017274455346289,
+          "R": 0.0009745511407332509,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.0060208902549276945,
+          "R": 0.00048690555745868196,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008530787304442108,
+          "R": 0.0005301878082236649,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.0057000001345741125,
+          "R": 0.00037222114801393764,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 10,
+      "source_subject": "subject_11",
+      "muscles": {
+        "shoulder": {
+          "F": 1.6536867071995756,
+          "R": 0.015533347053422668,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.008522114528429676,
+          "R": 0.0007709293377070283,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.023854678556248735,
+          "R": 0.0008061371024592069,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.00906343958866089,
+          "R": 0.0012139080448277232,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.009409095486048876,
+          "R": 0.0009385099225709549,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.015801356657949225,
+          "R": 0.0008061329960020827,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 11,
+      "source_subject": "subject_12",
+      "muscles": {
+        "shoulder": {
+          "F": 1.4597111139527545,
+          "R": 0.015519517215059094,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.00504946574649893,
+          "R": 0.00047803935079022817,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.018478883763989148,
+          "R": 0.00321698984420208,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.010219323210787407,
+          "R": 0.0005400950048629446,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.00632983824569461,
+          "R": 0.0006805701289695552,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.012700995853375243,
+          "R": 0.0007569750343676997,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 12,
+      "source_subject": "subject_13",
+      "muscles": {
+        "shoulder": {
+          "F": 1.864942510344795,
+          "R": 0.020383770146929648,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0074703346315217745,
+          "R": 0.0007841889146122943,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.013594861088806063,
+          "R": 0.0011122646051734107,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.011111317327789942,
+          "R": 0.0010124360280007816,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.0038612238682649114,
+          "R": 0.00046928704509325626,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.011718581918587231,
+          "R": 0.0004205603895348885,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 13,
+      "source_subject": "subject_14",
+      "muscles": {
+        "shoulder": {
+          "F": 1.864942510344795,
+          "R": 0.008885537822923251,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006079373340529049,
+          "R": 0.0005013439495857865,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.017936739401468234,
+          "R": 0.001139512484257207,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.008492916955104506,
+          "R": 0.0009260173371578664,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.00825487076314705,
+          "R": 0.0004305875956763857,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.012034716364861786,
+          "R": 0.00045777576938118517,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 14,
+      "source_subject": "subject_15",
+      "muscles": {
+        "shoulder": {
+          "F": 0.8637734131866963,
+          "R": 0.009554308530259537,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0038569503126264417,
+          "R": 0.00033967039022629727,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.00877326514131774,
+          "R": 0.0014204592300840785,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.008029750165125388,
+          "R": 0.0005619073294426763,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.009918898447478168,
+          "R": 0.0004013752215290874,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.01111376128897484,
+          "R": 0.0005614955513637198,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 15,
+      "source_subject": "subject_16",
+      "muscles": {
+        "shoulder": {
+          "F": 1.3681216506772311,
+          "R": 0.014952809637733848,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0074956366137978805,
+          "R": 0.0009080631017318735,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.011851755005853044,
+          "R": 0.0016603345241931375,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.010339033310428694,
+          "R": 0.0010832422316574308,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006987834775703488,
+          "R": 0.0007323301419214959,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.007955303964106876,
+          "R": 0.0005250236238838498,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 16,
+      "source_subject": "subject_17",
+      "muscles": {
+        "shoulder": {
+          "F": 1.459305955547793,
+          "R": 0.012570161506019245,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0061363097737444465,
+          "R": 0.0007926900845034336,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.012598515995536413,
+          "R": 0.0025135177361246177,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.012744368225509865,
+          "R": 0.001309827140893816,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.011556387140909605,
+          "R": 0.0004004915863075927,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.011913915150270234,
+          "R": 0.00047822508115055517,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 17,
+      "source_subject": "subject_18",
+      "muscles": {
+        "shoulder": {
+          "F": 1.5485416366223912,
+          "R": 0.020959396206402848,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0070094775029752275,
+          "R": 0.0004200121630021022,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.013342991965094862,
+          "R": 0.0012220024886593977,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.006974719147180217,
+          "R": 0.0006081185235530925,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.01101576820862347,
+          "R": 0.0006991082002474681,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.008426658489053211,
+          "R": 0.0006527142544109676,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 18,
+      "source_subject": "subject_19",
+      "muscles": {
+        "shoulder": {
+          "F": 1.2307388893731512,
+          "R": 0.013088096033007595,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0064172513204039635,
+          "R": 0.0009739418153594928,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.018333450745806112,
+          "R": 0.0008610279932954296,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.010332183288951845,
+          "R": 0.0010638051666436816,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.005846679524877228,
+          "R": 0.0008320479175509511,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.010476499760761399,
+          "R": 0.0004888016133039398,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 19,
+      "source_subject": "subject_20",
+      "muscles": {
+        "shoulder": {
+          "F": 1.277228681027218,
+          "R": 0.010777146128619925,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005884037096090524,
+          "R": 0.000983976514662274,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01602215897792804,
+          "R": 0.0022890731721828604,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.010480390627796697,
+          "R": 0.0038504561210121312,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008006469068112011,
+          "R": 0.0005525963179130199,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.008581462080543825,
+          "R": 0.0006497944926837412,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 20,
+      "source_subject": "subject_21",
+      "muscles": {
+        "shoulder": {
+          "F": 0.7551085815899273,
+          "R": 0.03266055581328083,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.002493004148123465,
+          "R": 0.0007391187856207587,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.00821228137180774,
+          "R": 0.0014854190139303267,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.00868728052478311,
+          "R": 0.0013517429807144393,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006331553484024964,
+          "R": 0.0006002942305544532,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.005023867630009608,
+          "R": 0.0003455123171643077,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 21,
+      "source_subject": "subject_22",
+      "muscles": {
+        "shoulder": {
+          "F": 1.6323009783497122,
+          "R": 0.017022589148946107,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006670427696425366,
+          "R": 0.0004799224706193512,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01775058262385029,
+          "R": 0.0018696773151888348,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.012875217319184172,
+          "R": 0.001121722150017754,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.00860811277175921,
+          "R": 0.0008987016812232583,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.008906936646330386,
+          "R": 0.0005473163556405225,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 22,
+      "source_subject": "subject_23",
+      "muscles": {
+        "shoulder": {
+          "F": 1.9399358799411859,
+          "R": 0.019058967503929155,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.007136277445875222,
+          "R": 0.00025041032583101295,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.012964128082947281,
+          "R": 0.0008318160312879887,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.00996347129816765,
+          "R": 0.0011691884690751813,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.013374750888377295,
+          "R": 0.00043224426598748337,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.013155978746666352,
+          "R": 0.001049053736499142,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 23,
+      "source_subject": "subject_24",
+      "muscles": {
+        "shoulder": {
+          "F": 1.2151804563401347,
+          "R": 0.01072560116127472,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0055089769502164885,
+          "R": 0.0006179433899629,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.016940616460251252,
+          "R": 0.0015511248916346557,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.0074109909218752585,
+          "R": 0.0007966653899679462,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.012843020524209412,
+          "R": 0.00032826302442788097,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.01253537198553813,
+          "R": 0.000558716030243842,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 24,
+      "source_subject": "subject_25",
+      "muscles": {
+        "shoulder": {
+          "F": 1.1354198587943052,
+          "R": 0.01505630891838613,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.008263764996477942,
+          "R": 0.0004410476221678782,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01540406409097955,
+          "R": 0.001580966530862266,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.007767696491511478,
+          "R": 0.0009007359437522635,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006999630182895295,
+          "R": 0.0008735053661496583,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.009323270560289415,
+          "R": 0.00040384476452299796,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 25,
+      "source_subject": "subject_26",
+      "muscles": {
+        "shoulder": {
+          "F": 0.6696204960796426,
+          "R": 0.01938027023389683,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.003772818950658392,
+          "R": 0.00044386240213053856,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.009927189405743482,
+          "R": 0.0015129215616144474,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.012923373440651217,
+          "R": 0.00042508962869184177,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006379531893898971,
+          "R": 0.0005478306683865455,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.007326653393246871,
+          "R": 0.0005316851644723187,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 26,
+      "source_subject": "subject_27",
+      "muscles": {
+        "shoulder": {
+          "F": 0.9099307253395857,
+          "R": 0.01191857784792201,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006578827626154539,
+          "R": 0.0006112282810732577,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.014302515499729851,
+          "R": 0.0010505984655552853,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.009610107800547375,
+          "R": 0.00046888895503412686,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.006337685790675948,
+          "R": 0.0005758994220785762,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.009343898129169905,
+          "R": 0.00043206015677206235,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 27,
+      "source_subject": "subject_28",
+      "muscles": {
+        "shoulder": {
+          "F": 0.4370456580550425,
+          "R": 0.021461510544934607,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.0034377871445331123,
+          "R": 0.0006562593141057064,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.01609712642905377,
+          "R": 0.00166048836071784,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.005401861089420247,
+          "R": 0.0013276842554729906,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.004340398864017694,
+          "R": 0.000966010887857572,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.0070941672077399175,
+          "R": 0.0010725032692575397,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 28,
+      "source_subject": "subject_29",
+      "muscles": {
+        "shoulder": {
+          "F": 1.5501724542810529,
+          "R": 0.014733507352227178,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.006556182443512844,
+          "R": 0.0007821070739200868,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.012033045032844096,
+          "R": 0.00178158866824644,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.010067215507264778,
+          "R": 0.0005762060257777887,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008978064010996177,
+          "R": 0.000533211195962291,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.010460169506302037,
+          "R": 0.0006936856390549502,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 29,
+      "source_subject": "subject_30",
+      "muscles": {
+        "shoulder": {
+          "F": 2.008679802071211,
+          "R": 0.016595744866683235,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005910630476636482,
+          "R": 0.0004746535740972576,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.014044574188948028,
+          "R": 0.0018734711800259276,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.009121165554528882,
+          "R": 0.0011339779729759114,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.011384280497195327,
+          "R": 0.0007838763715585554,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.014990700146882276,
+          "R": 0.0005091215120469377,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 30,
+      "source_subject": "subject_31",
+      "muscles": {
+        "shoulder": {
+          "F": 1.574186775787558,
+          "R": 0.014727446932694921,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005823759701377923,
+          "R": 0.0003064315270475748,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.02199855611281432,
+          "R": 0.0010084309948880496,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.008274381299777341,
+          "R": 0.000948670215225505,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.010140913741252963,
+          "R": 0.0008875188063214513,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.011649032878639744,
+          "R": 0.0005971148277073195,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 31,
+      "source_subject": "subject_32",
+      "muscles": {
+        "shoulder": {
+          "F": 2.624021023409737,
+          "R": 0.03790633746690297,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.008441367422226134,
+          "R": 0.0005954934991884153,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.025471889429973013,
+          "R": 0.0016218886087397996,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.012263912449038497,
+          "R": 0.000679011981436716,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008128667239990086,
+          "R": 0.0005611855965061979,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.01415903147476949,
+          "R": 0.0004411803302513409,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 32,
+      "source_subject": "subject_33",
+      "muscles": {
+        "shoulder": {
+          "F": 1.2035116315653722,
+          "R": 0.01847322566384626,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.005811395654445993,
+          "R": 0.0004919822625770768,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.018216138485683424,
+          "R": 0.002872870278663099,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.015499241256529319,
+          "R": 0.0011141969338270914,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008996155651919926,
+          "R": 0.0008809582924779181,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.009701395966582552,
+          "R": 0.0007199009220167338,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    },
+    {
+      "worker_id": 33,
+      "source_subject": "subject_34",
+      "muscles": {
+        "shoulder": {
+          "F": 1.940111820721849,
+          "R": 0.012354690425399882,
+          "r": 15,
+          "task_type": "dynamic_rotation",
+          "F_source": "WSD4FEDSRM calibration (real data)",
+          "R_source": "log-normal(0.02, CV=0.4)"
+        },
+        "ankle": {
+          "F": 0.00486500105311809,
+          "R": 0.00045795144209782553,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "knee": {
+          "F": 0.016681606267431977,
+          "R": 0.0010347779582554788,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "elbow": {
+          "F": 0.006451147278473414,
+          "R": 0.0009377674419350757,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "trunk": {
+          "F": 0.008889541109021466,
+          "R": 0.0007285556046675574,
+          "r": 15,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        },
+        "grip": {
+          "F": 0.018571617432080214,
+          "R": 0.0008599036091531868,
+          "r": 30,
+          "task_type": "isometric",
+          "source": "population (Frey-Law & Avin 2010), F correlated with shoulder (rho=0.5)"
+        }
+      }
+    }
+  ]
+}

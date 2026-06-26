@@ -1,0 +1,125 @@
+# Appendix F Continuous-Mode Probe — Gate 1 FULL PROBE
+# =====================================================
+# Purpose: 3 seeds × 50K continuous-mode steps. Demonstrates that the
+# math-doc-faithful continuous-mode pipeline (Remark 7.2) loads and runs
+# end-to-end with all 4 components wired correctly:
+#
+#   (1) GaussianActorNetwork outputs continuous neural drive C(t) per muscle
+#   (2) NSWF Hungarian allocator picks tasks every K=30 steps
+#   (3) ECBF clips C(t) to maintain forward invariance
+#   (4) MMICRL pretrains per-worker θ_max ceilings from Path G demos
+#
+# THIS IS NOT A BENCHMARK. NOT A CONVERGENCE CLAIM. NOT A COMPARISON.
+# 50K is intentionally below the convergence threshold for continuous
+# PPO with Gaussian actors on safe-RL benchmarks (Achiam 2017, Ray 2019,
+# Stooke 2020 use 1M+ as standard). The probe demonstrates the runner
+# is functionally complete and the pipeline executes; full continuous-
+# mode evaluation is identified as future work.
+#
+# All hyperparameters except action_mode + total_steps + seeds are
+# identical to hcmarl_full_config.yaml (the discrete anchor). No tuning
+# performed.
+
+action_mode: continuous
+
+environment:
+  n_workers: 6
+  max_steps: 480
+  dt: 1.0
+  kappa: 1.0
+
+  muscle_groups:
+    shoulder: {F: 0.01820, R: 0.00168, r: 15}
+    ankle:    {F: 0.00589, R: 0.00058, r: 15}
+    knee:     {F: 0.01500, R: 0.00149, r: 15}
+    elbow:    {F: 0.00912, R: 0.00094, r: 15}
+    trunk:    {F: 0.00755, R: 0.00075, r: 15}
+    grip:     {F: 0.00980, R: 0.00064, r: 30}
+
+  theta_max:
+    shoulder: 0.70
+    ankle: 0.80
+    knee: 0.60
+    elbow: 0.45
+    trunk: 0.65
+    grip: 0.45
+
+  tasks:
+    heavy_lift:     {shoulder: 0.45, ankle: 0.10, knee: 0.40, elbow: 0.30, trunk: 0.50, grip: 0.55}
+    light_sort:     {shoulder: 0.10, ankle: 0.05, knee: 0.05, elbow: 0.15, trunk: 0.10, grip: 0.20}
+    carry:          {shoulder: 0.25, ankle: 0.20, knee: 0.25, elbow: 0.20, trunk: 0.30, grip: 0.45}
+    overhead_reach: {shoulder: 0.55, ankle: 0.05, knee: 0.10, elbow: 0.35, trunk: 0.15, grip: 0.30}
+    push_cart:      {shoulder: 0.20, ankle: 0.15, knee: 0.20, elbow: 0.15, trunk: 0.25, grip: 0.40}
+    rest:           {shoulder: 0.00, ankle: 0.00, knee: 0.00, elbow: 0.00, trunk: 0.00, grip: 0.00}
+
+training:
+  total_steps: 50000        # Gate 1 probe scale
+  eval_interval: 10000      # 5 evals over the run
+  checkpoint_interval: 25000 # 2 ckpts (mid + end)
+  n_eval_episodes: 5
+  seeds: [0, 1, 2]          # 3 seeds
+  deterministic: true
+  high_determinism: true
+
+algorithm:
+  lr_actor: 0.0003
+  lr_critic: 0.001
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.2
+  entropy_coeff: 0.05
+  entropy_coeff_final: 0.01
+  max_grad_norm: 0.5
+  n_epochs: 10
+  batch_size: 256
+  hidden_dim: 64
+  critic_hidden_dim: 128
+
+ecbf:
+  enabled: true
+  alpha1: 0.05
+  alpha2: 0.05
+  alpha3: 0.10
+  kp: 1.0
+
+nswf:
+  enabled: true
+  allocation: nswf
+  kappa: 1.0
+  epsilon: 0.001
+
+mmicrl:
+  enabled: true
+  n_types: 3
+  auto_select_k: true
+  k_range: [1, 5]
+  k_selection: heldout_nll
+  heldout_frac: 0.2
+  n_iterations: 150
+  n_episodes_per_worker: 3
+  lambda1: 1.0
+  lambda2: 1.0
+  hidden_dims: [64, 64]
+  use_fixed_theta: false
+  rescale_to_floor: true
+  mi_collapse_threshold: 0.01
+  ceiling_source: mmicrl_rescale
+  F_anchor_alpha: 0.05
+  F_anchor_z_clip: 2.0
+  F_anchor_epsilon: 0.005
+
+disagreement:
+  divergent: true
+  type: divergent
+
+type_conditioning:
+  enabled: false
+
+logging:
+  use_wandb: false
+  project_name: "hcmarl-appendix-f-probe"
+  log_interval: 10
+  save_interval: 50
+
+# Allocation interval K (NSWF allocator calls every K steps)
+allocation_interval: 30

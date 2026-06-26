@@ -1,0 +1,33 @@
+# HC-MARL requirements (Python 3.10-3.13; tested on 3.13.3)
+
+# --- Numerical core ---
+numpy==1.26.4
+scipy==1.13.1
+
+# --- QP solver for ECBF safety filter ---
+cvxpy==1.5.2
+osqp==0.6.7.post3
+
+# --- Configuration ---
+pyyaml==6.0.2
+
+# --- Testing ---
+pytest==8.2.2
+pytest-cov==5.0.0
+
+# --- Logging / visualization ---
+matplotlib==3.9.0
+pandas==2.2.2
+wandb==0.17.0
+
+# --- RL framework ---
+# CUDA hosts: install the CUDA wheel BEFORE this file so the line below is
+# satisfied by the CUDA build instead of the CPU wheel from PyPI:
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# cu124 wheels are forward-compatible with CUDA 12.5+ drivers.
+# 2.6.0 is required for `weights_only=False` resume behaviour used by every agent loader.
+torch==2.6.0
+gymnasium==0.29.1
+
+# NOTE: pettingzoo is intentionally NOT a runtime dep. hcmarl/envs/pettingzoo_wrapper.py
+# implements the parallel-env API surface without importing the library.

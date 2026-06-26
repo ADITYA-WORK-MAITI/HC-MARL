@@ -1,0 +1,60 @@
+# HC-MARL Task Demand Profiles
+# T_L,g: fraction of MVC demanded per muscle group per task (Eq 34)
+#
+# ALL values sourced from published ergonomics literature:
+#   [1] Granata & Marras (1995) J Biomech 28(11):1309-17 — trunk EMG during lifting
+#   [2] de Looze et al. (2000) Ergonomics 43(3):377-90 — shoulder loads during pushing
+#   [3] Hoozemans et al. (2004) Appl Ergon 35(3):231-37 — shoulder/grip cart pushing
+#   [4] Snook & Ciriello (1991) Ergonomics 34(9):1197-213 — Liberty Mutual MMH tables
+#   [5] Nordander et al. (2000) Int Arch Occup Environ Health 73:507-14 — repetitive work
+#   [6] Anton et al. (2001) Appl Ergon 32(6):549-58 — overhead work shoulder loads
+#   [7] McGill et al. (2013) Clin Biomech 28(1):1-7 — trunk stabilisation demands
+
+task_profiles:
+  heavy_lift:              # Floor-to-waist lift, 15-20 kg box
+    shoulder: 0.45         # [3] Hoozemans 2004: deltoid 40-50% MVC during heavy lifts
+    ankle: 0.10            # [4] Snook 1991: minor ankle contribution
+    knee: 0.40             # [1] Granata 1995: knee extensors ~40% MVC at floor level
+    elbow: 0.30            # [3] Hoozemans 2004: biceps ~25-35% MVC
+    trunk: 0.50            # [1] Granata 1995: erector spinae 45-55% MVC (was 0.35, corrected)
+    grip: 0.55             # [3] Hoozemans 2004: grip 50-60% MVC for box grasp
+
+  light_sort:              # Tabletop sorting, <5 kg items
+    shoulder: 0.10         # [5] Nordander 2000: light repetitive upper-limb work ~8-12%
+    ankle: 0.05            # Standing load only
+    knee: 0.05             # Standing load only
+    elbow: 0.15            # [5] Nordander 2000: forearm during sorting ~12-18%
+    trunk: 0.10            # [7] McGill 2013: upright standing stabilisation ~8-12%
+    grip: 0.20             # [5] Nordander 2000: pinch/light grip ~15-25%
+
+  carry:                   # Two-handed carry, 10-15 kg, 10-20 m
+    shoulder: 0.25         # [4] Snook 1991: sustained shoulder load during carry
+    ankle: 0.20            # [4] Snook 1991: gait with load
+    knee: 0.25             # [4] Snook 1991: loaded walking
+    elbow: 0.20            # [4] Snook 1991: isometric elbow flexion during carry
+    trunk: 0.30            # [4] Snook 1991: trunk stabilisation with anterior load
+    grip: 0.45             # [4] Snook 1991: sustained grip during carry
+
+  overhead_reach:          # Overhead shelf stacking, 5-10 kg
+    shoulder: 0.55         # [6] Anton 2001: deltoid/supraspinatus 50-60% MVC overhead
+    ankle: 0.05            # Standing load only
+    knee: 0.10             # [6] Anton 2001: slight knee extension for reach
+    elbow: 0.35            # [6] Anton 2001: biceps/triceps 30-40% MVC
+    trunk: 0.15            # [7] McGill 2013: trunk during overhead placement
+    grip: 0.30             # [6] Anton 2001: moderate grip for shelf placement
+
+  push_cart:               # Cart pushing, 20-50 kg load, sustained
+    shoulder: 0.20         # [2] de Looze 2000: anterior deltoid ~15-25% MVC
+    ankle: 0.15            # [2] de Looze 2000: ankle plantar flexion during push
+    knee: 0.20             # [2] de Looze 2000: knee extension for push-off
+    elbow: 0.15            # [3] Hoozemans 2004: elbow ~10-20%
+    trunk: 0.25            # [2] de Looze 2000: trunk flexion during sustained push
+    grip: 0.40             # [3] Hoozemans 2004: grip force 35-45% MVC on handle
+
+  rest:
+    shoulder: 0.00
+    ankle: 0.00
+    knee: 0.00
+    elbow: 0.00
+    trunk: 0.00
+    grip: 0.00

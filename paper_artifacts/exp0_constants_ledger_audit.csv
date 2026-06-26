@@ -1,0 +1,39 @@
+module,constant,value,source,source_class
+three_cc_r,shoulder_F,0.0182,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,shoulder_R,0.00168,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,shoulder_r,15,Looft 2018,PRIMARY_SOURCE
+three_cc_r,ankle_F,0.00589,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,ankle_R,0.00058,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,ankle_r,15,Looft 2018,PRIMARY_SOURCE
+three_cc_r,knee_F,0.015,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,knee_R,0.00149,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,knee_r,15,Looft 2018,PRIMARY_SOURCE
+three_cc_r,elbow_F,0.00912,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,elbow_R,0.00094,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,elbow_r,15,Looft 2018,PRIMARY_SOURCE
+three_cc_r,trunk_F,0.00755,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,trunk_R,0.00075,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,trunk_r,15,Looft 2018,PRIMARY_SOURCE
+three_cc_r,grip_F,0.0098,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,grip_R,0.00064,Frey-Law 2012 Table 1 (ref3.pdf p.14),PRIMARY_SOURCE
+three_cc_r,grip_r,30,Looft 2018 Table 2 (ref4.pdf p.24),PRIMARY_SOURCE
+real_data_calibration,shoulder_b0,14.86,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,shoulder_b1,-1.83,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,ankle_b0,34.71,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,ankle_b1,-2.06,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,knee_b0,19.38,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,knee_b1,-1.88,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,elbow_b0,17.98,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,elbow_b1,-2.21,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,grip_b0,33.55,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,grip_b1,-1.61,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,trunk_b0,22.69,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+real_data_calibration,trunk_b1,-2.27,Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34),PRIMARY_SOURCE
+ecbf_filter,alpha1,0.05,DESIGN (Nguyen-Sreenath 2016 does not prescribe magnitude),DESIGN
+ecbf_filter,alpha2,0.05,DESIGN,DESIGN
+ecbf_filter,alpha3,0.1,DESIGN,DESIGN
+ecbf_filter,SLACK_PENALTY,1000.0,"DESIGN (Ames 2019 only requires p>0, ref15 p.7)",DESIGN
+ecbf_filter,SLACK_EPS,1e-06,DESIGN,DESIGN
+nswf_allocator,NSWF_EPSILON,0.001,"DESIGN (Kaneko-Nakamura 1979 allows any eps > 0, ref21)",DESIGN
+niosh_calibration,LC_METRIC,23.0,Waters 1993 Appendix A (ref_waters1993 p.27),PRIMARY_SOURCE
+niosh_calibration,VM_coeff,0.0031,Waters 1993 Appendix A (ref_waters1993 p.27),PRIMARY_SOURCE

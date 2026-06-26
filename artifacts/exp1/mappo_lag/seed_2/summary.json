@@ -1,0 +1,9 @@
+{
+  "method": "mappo_lag",
+  "seed": 2,
+  "total_episodes": 4167,
+  "total_steps": 2000160,
+  "best_reward": -8931.769297206845,
+  "wall_time_seconds": 9766.172112464905,
+  "wall_time_hours": 2.712825586795807
+}

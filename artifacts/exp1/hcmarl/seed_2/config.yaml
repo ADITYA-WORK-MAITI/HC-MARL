@@ -1,0 +1,180 @@
+action_mode: discrete
+algorithm:
+  batch_size: 256
+  clip_eps: 0.2
+  critic_hidden_dim: 128
+  entropy_coeff: 0.05
+  entropy_coeff_final: 0.01
+  gae_lambda: 0.95
+  gamma: 0.99
+  hidden_dim: 64
+  lr_actor: 0.0003
+  lr_critic: 0.001
+  max_grad_norm: 0.5
+  n_epochs: 10
+allocation_interval: 30
+ecbf:
+  alpha1: 0.05
+  alpha2: 0.05
+  alpha3: 0.1
+  enabled: true
+  kp: 1.0
+environment:
+  dt: 1.0
+  kappa: 1.0
+  max_steps: 480
+  muscle_groups:
+    ankle:
+      F: 0.00589
+      R: 0.00058
+      r: 15
+    elbow:
+      F: 0.00912
+      R: 0.00094
+      r: 15
+    grip:
+      F: 0.0098
+      R: 0.00064
+      r: 30
+    knee:
+      F: 0.015
+      R: 0.00149
+      r: 15
+    shoulder:
+      F: 0.0182
+      R: 0.00168
+      r: 15
+    trunk:
+      F: 0.00755
+      R: 0.00075
+      r: 15
+  n_workers: 6
+  tasks:
+    carry:
+      ankle: 0.2
+      elbow: 0.2
+      grip: 0.45
+      knee: 0.25
+      shoulder: 0.25
+      trunk: 0.3
+    heavy_lift:
+      ankle: 0.1
+      elbow: 0.3
+      grip: 0.55
+      knee: 0.4
+      shoulder: 0.45
+      trunk: 0.5
+    light_sort:
+      ankle: 0.05
+      elbow: 0.15
+      grip: 0.2
+      knee: 0.05
+      shoulder: 0.1
+      trunk: 0.1
+    overhead_reach:
+      ankle: 0.05
+      elbow: 0.35
+      grip: 0.3
+      knee: 0.1
+      shoulder: 0.55
+      trunk: 0.15
+    push_cart:
+      ankle: 0.15
+      elbow: 0.15
+      grip: 0.4
+      knee: 0.2
+      shoulder: 0.2
+      trunk: 0.25
+    rest:
+      ankle: 0.0
+      elbow: 0.0
+      grip: 0.0
+      knee: 0.0
+      shoulder: 0.0
+      trunk: 0.0
+  theta_max:
+    ankle: 0.8
+    elbow: 0.45
+    grip: 0.45
+    knee: 0.6
+    shoulder: 0.7
+    trunk: 0.65
+logging:
+  log_interval: 10
+  project_name: hcmarl
+  save_interval: 50
+  use_wandb: false
+mmicrl:
+  F_anchor_alpha: 0.05
+  F_anchor_epsilon: 0.005
+  F_anchor_z_clip: 2.0
+  auto_select_k: true
+  ceiling_source: mmicrl_rescale
+  enabled: true
+  heldout_frac: 0.2
+  hidden_dims:
+  - 64
+  - 64
+  k_range:
+  - 1
+  - 5
+  k_selection: heldout_nll
+  lambda1: 1.0
+  lambda2: 1.0
+  mi_collapse_threshold: 0.01
+  n_episodes_per_worker: 3
+  n_iterations: 150
+  n_types: 3
+  rescale_to_floor: true
+  use_fixed_theta: false
+mmicrl_results:
+  bic_scores: &id001
+    1: 1440260352.0
+    2: 14934292.0
+    3: 40924504.0
+    4: 40.132362365722656
+    5: 4944.72607421875
+  k_selection:
+    score: heldout_nll
+    values: *id001
+  lambda1: 1.0
+  lambda2: 1.0
+  mi_collapsed: true
+  mutual_information: 0.0
+  n_demonstrations: 102
+  n_types_discovered: 4
+  objective_value: 0.0
+  theta_per_type:
+    0:
+      shoulder: 0.18374177813529968
+    1:
+      shoulder: 0.31078365445137024
+    2:
+      shoulder: 0.24059544503688812
+    3:
+      shoulder: 0.19663813710212708
+  type_proportions:
+  - 0.3235294117647059
+  - 0.24509803921568626
+  - 0.3431372549019608
+  - 0.08823529411764706
+training:
+  checkpoint_interval: 100000
+  deterministic: true
+  eval_interval: 50000
+  n_eval_episodes: 10
+  seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  total_steps: 2000000
+type_conditioning:
+  enabled: false
+welfare_type: nswf

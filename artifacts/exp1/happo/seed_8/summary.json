@@ -1,0 +1,9 @@
+{
+  "method": "happo",
+  "seed": 8,
+  "total_episodes": 4167,
+  "total_steps": 2000160,
+  "best_reward": -8627.557264079094,
+  "wall_time_seconds": 43563.15989494324,
+  "wall_time_hours": 12.100877748595344
+}

@@ -1,0 +1,58 @@
+# Canonical experiment matrix for the headline + ablation grids.
+# Single source of truth for WHICH configs and seeds the runs use.
+# scripts/aggregate_learning_curves.py reads this file; if you add a new
+# config or change the seed count, change it HERE, not in ad-hoc scripts.
+
+# Headline (HC-MARL vs baselines): 10 seeds each.
+# Seed list is literal — aggregation is strictly keyed on this list, so if
+# a run is missing its CSV the aggregator raises rather than silently
+# averaging over fewer seeds.
+headline:
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  methods:
+    hcmarl:    {config: config/hcmarl_full_config.yaml, method: hcmarl}
+    mappo:     {config: config/mappo_config.yaml,        method: mappo}
+    mappo_lag: {config: config/mappo_lag_config.yaml,    method: mappo_lag}
+    happo:     {config: config/happo_config.yaml,        method: happo}
+    shielded_mappo: {config: config/shielded_mappo_config.yaml, method: shielded_mappo}
+
+# Remove-one attribution ablation.
+# Reference point is the full HC-MARL run at all 10 seeds.
+# Each rung differs from full HC-MARL by EXACTLY ONE ablated component.
+# 5 rungs x 10 seeds = 50 runs.
+#
+# Ablation axes:
+#   no_ecbf          ecbf.enabled=false            (safety filter off; everything else on)
+#   no_nswf          nswf.enabled=false            (Hungarian allocator off; everything else on)
+#   no_divergent     disagreement.type=constant    (D_i=kappa instead of kappa*MF^2/(1-MF))
+#   no_reperfusion   muscle_groups.*.r=1           (3CC-r reperfusion multiplier off)
+#   no_mmicrl        mmicrl.enabled=false          (type-inference fallback to floor)
+#
+# Note: on real WSD4FEDSRM data MMICRL also collapses (MI < 1e-7) under
+# the no_ecbf/no_nswf/no_divergent/no_reperfusion configs because the
+# data simply does not exhibit multi-type structure. The no_mmicrl rung
+# disables MMICRL entirely so the comparison is "MMICRL ran but
+# collapsed" vs "MMICRL never ran" -- isolating the cost (~5 min pretrain
+# per seed) of attempting type inference at all.
+ablation:
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  rungs:
+    - {name: no_ecbf,         config: config/ablation_no_ecbf.yaml,         method: hcmarl}
+    - {name: no_nswf,         config: config/ablation_no_nswf.yaml,         method: hcmarl}
+    - {name: no_divergent,    config: config/ablation_no_divergent.yaml,    method: hcmarl}
+    - {name: no_reperfusion,  config: config/ablation_no_reperfusion.yaml,  method: hcmarl}
+    - {name: no_mmicrl,       config: config/ablation_no_mmicrl.yaml,       method: hcmarl}
+
+# Learning-curve anchor points (steps).
+# Every CSV must have a row with global_step >= each anchor. Aggregator
+# reports IQM + stratified bootstrap 95% CI at each anchor per rung.
+curve_anchors_steps: [500000, 1000000, 2000000]
+
+# Lazy-agent kill-switch parameters.
+# Per-agent task-selection entropy is logged every episode. If any agent's
+# entropy stays below `threshold` for a continuous window >= `window_steps`
+# consecutive steps, training raises a lazy-agent flag and halts the run.
+# The threshold is informed by Liu et al. ICML 2023 (lazy-agent pathology).
+lazy_agent_kill_switch:
+  threshold: 0.1
+  window_steps: 100000

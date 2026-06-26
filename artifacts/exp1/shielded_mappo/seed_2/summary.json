@@ -1,0 +1,9 @@
+{
+  "method": "shielded_mappo",
+  "seed": 2,
+  "total_episodes": 4167,
+  "total_steps": 2000160,
+  "best_reward": -7274.776496293399,
+  "wall_time_seconds": 20592.695691108704,
+  "wall_time_hours": 5.7201932475301955
+}

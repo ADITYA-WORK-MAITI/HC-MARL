@@ -1,0 +1,49 @@
+# Dry-run config: 50K steps to verify training loop produces real metrics
+# NOT for experiments — just to verify no crashes, losses decrease, checkpoints work
+
+environment:
+  n_workers: 4
+  max_steps: 60
+  dt: 1.0
+  kappa: 1.0
+  theta_max:
+    shoulder: 0.70
+    ankle: 0.80
+    knee: 0.60
+    elbow: 0.45
+    trunk: 0.65
+    grip: 0.45  # raised 0.35->0.45 (ECBF margin 1.2pp->11.2pp)
+  tasks:
+    heavy_lift:     {shoulder: 0.45, ankle: 0.10, knee: 0.40, elbow: 0.30, trunk: 0.50, grip: 0.55}
+    light_sort:     {shoulder: 0.10, ankle: 0.05, knee: 0.05, elbow: 0.15, trunk: 0.10, grip: 0.20}
+    carry:          {shoulder: 0.25, ankle: 0.20, knee: 0.25, elbow: 0.20, trunk: 0.30, grip: 0.45}
+    overhead_reach: {shoulder: 0.55, ankle: 0.05, knee: 0.10, elbow: 0.35, trunk: 0.15, grip: 0.30}
+    push_cart:      {shoulder: 0.20, ankle: 0.15, knee: 0.20, elbow: 0.15, trunk: 0.25, grip: 0.40}
+    rest:           {shoulder: 0.00, ankle: 0.00, knee: 0.00, elbow: 0.00, trunk: 0.00, grip: 0.00}
+
+training:
+  total_steps: 50000
+  eval_interval: 10000
+  checkpoint_interval: 25000
+  n_eval_episodes: 3
+
+algorithm:
+  lr_actor: 0.0003
+  lr_critic: 0.001
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.2
+  entropy_coeff: 0.05
+  max_grad_norm: 0.5
+  n_epochs: 5
+  batch_size: 128
+  hidden_dim: 64
+
+ecbf:
+  alpha1: 0.5
+  alpha2: 0.5
+  alpha3: 0.5
+  kp: 1.0
+
+logging:
+  use_wandb: false

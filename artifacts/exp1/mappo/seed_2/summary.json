@@ -1,0 +1,9 @@
+{
+  "method": "mappo",
+  "seed": 2,
+  "total_episodes": 4167,
+  "total_steps": 2000160,
+  "best_reward": -8934.32187971785,
+  "wall_time_seconds": 8809.32388138771,
+  "wall_time_hours": 2.447034411496586
+}

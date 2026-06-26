@@ -1,0 +1,255 @@
+% =====================================================================
+% HC-MARL: BibTeX entries for the experimental section.
+%
+% Verification status:
+%   [VERIFIED]   metadata cross-checked against arXiv/PubMed/CrossRef.
+%                Safe to use as-is.
+%   [PARTIAL]    DOI + title + year confirmed; full author list from
+%                publisher page was blocked (403/303). Author list is a
+%                best-effort attribution — confirm against publisher
+%                before final submission.
+%   [TEXTBOOK]   classical reference, no online metadata fetch needed.
+%
+% Authoring conventions:
+%   - keys follow the <firstauthor><year> pattern.
+%   - arXiv preprint cited where the conference/journal version is
+%     paywalled or where the conference proceedings paper is identical
+%     to the arXiv version (the canonical TMLR practice).
+% =====================================================================
+
+% ---------------------------------------------------------------------
+% MARL baselines
+% ---------------------------------------------------------------------
+
+@inproceedings{yu2022mappo,                              % [VERIFIED]
+  title     = {The Surprising Effectiveness of {PPO} in Cooperative
+               Multi-Agent Games},
+  author    = {Yu, Chao and Velu, Akash and Vinitsky, Eugene and
+               Gao, Jiaxuan and Wang, Yu and Bayen, Alexandre and
+               Wu, Yi},
+  booktitle = {Advances in Neural Information Processing Systems
+               (Datasets and Benchmarks Track)},
+  year      = {2022},
+  eprint    = {2103.01955},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2103.01955},
+}
+
+@inproceedings{stooke2020pid,                            % [VERIFIED]
+  title     = {Responsive Safety in Reinforcement Learning by
+               {PID} {L}agrangian Methods},
+  author    = {Stooke, Adam and Achiam, Joshua and Abbeel, Pieter},
+  booktitle = {Proceedings of the 37th International Conference on
+               Machine Learning (ICML)},
+  year      = {2020},
+  eprint    = {2007.03964},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2007.03964},
+}
+
+@inproceedings{kuba2022happo,                            % [VERIFIED]
+  title     = {Trust Region Policy Optimisation in Multi-Agent
+               Reinforcement Learning},
+  author    = {Kuba, Jakub Grudzien and Chen, Ruiqing and
+               Wen, Muning and Wen, Ying and Sun, Fanmin and
+               Wang, Jun and Yang, Yaodong},
+  booktitle = {International Conference on Learning Representations
+               (ICLR)},
+  year      = {2022},
+  eprint    = {2109.11251},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2109.11251},
+  note      = {Introduces HATRPO and HAPPO; the PPO-clip variant
+               (Eq.~11) is the one we implement.},
+}
+
+% ---------------------------------------------------------------------
+% Safety-baseline contextualisation (shielded-MAPPO)
+% ---------------------------------------------------------------------
+
+@inproceedings{alshiekh2018shielding,                    % [VERIFIED]
+  title     = {Safe Reinforcement Learning via Shielding},
+  author    = {Alshiekh, Mohammed and Bloem, Roderick and
+               Ehlers, R{\"u}diger and K{\"o}nighofer, Bettina and
+               Niekum, Scott and Topcu, Ufuk},
+  booktitle = {Proceedings of the 32nd AAAI Conference on Artificial
+               Intelligence (AAAI)},
+  year      = {2018},
+  eprint    = {1708.08611},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1708.08611},
+}
+
+% ---------------------------------------------------------------------
+% Statistical methodology
+% ---------------------------------------------------------------------
+
+@inproceedings{agarwal2021rliable,                       % [VERIFIED]
+  title     = {Deep Reinforcement Learning at the Edge of the
+               Statistical Precipice},
+  author    = {Agarwal, Rishabh and Schwarzer, Max and
+               Castro, Pablo Samuel and Courville, Aaron and
+               Bellemare, Marc G.},
+  booktitle = {Advances in Neural Information Processing Systems
+               (NeurIPS)},
+  year      = {2021},
+  note      = {Outstanding Paper Award. Source of the IQM + stratified
+               bootstrap CI methodology used throughout EXP1/EXP2.},
+  eprint    = {2108.13264},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2108.13264},
+}
+
+@article{hubert1985ari,                                  % [TEXTBOOK]
+  title     = {Comparing Partitions},
+  author    = {Hubert, Lawrence and Arabie, Phipps},
+  journal   = {Journal of Classification},
+  volume    = {2},
+  number    = {1},
+  pages     = {193--218},
+  year      = {1985},
+  doi       = {10.1007/BF01908075},
+  note      = {Canonical reference for the Adjusted Rand Index used in
+               EXP3 Part~1 to validate MMICRL synthetic-K=3 recovery
+               (ARI=1.0).},
+}
+
+% ---------------------------------------------------------------------
+% Environment / software stack
+% ---------------------------------------------------------------------
+
+@inproceedings{terry2021pettingzoo,                      % [VERIFIED]
+  title     = {{PettingZoo}: Gym for Multi-Agent Reinforcement Learning},
+  author    = {Terry, J. K. and Black, Benjamin and Grammel, Nathaniel
+               and Jayakumar, Mario and Hari, Ananth and
+               Sullivan, Ryan and Santos, Luis S. and
+               Dieffendahl, Clemens and Horsch, Caroline and
+               Perez-Vicente, Rodrigo and Williams, Niall L. and
+               Lokesh, Yashas and Ravi, Praveen},
+  booktitle = {Advances in Neural Information Processing Systems
+               (NeurIPS)},
+  year      = {2021},
+  eprint    = {2009.14471},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2009.14471},
+}
+
+@inproceedings{towers2024gymnasium,                      % [VERIFIED]
+  title     = {{Gymnasium}: A Standard Interface for Reinforcement
+               Learning Environments},
+  author    = {Towers, Mark and Kwiatkowski, Ariel and Terry, Jordan
+               and Balis, John U. and De Cola, Gianluca and
+               Deleu, Tristan and Goul{\~a}o, Manuel and
+               Kallinteris, Andreas and Krimmel, Markus and
+               KG, Arjun and Perez-Vicente, Rodrigo and
+               Pierr{\'e}, Andrea and Schulhoff, Sander and
+               Tai, Jun Jet and Tan, Hannah and Younis, Omar G.},
+  booktitle = {Advances in Neural Information Processing Systems
+               (Datasets and Benchmarks Track)},
+  year      = {2025},
+  eprint    = {2407.17032},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2407.17032},
+  note      = {Initial preprint July 2024; accepted at NeurIPS
+               D\&B 2025.},
+}
+
+% ---------------------------------------------------------------------
+% Dataset (calibration source + future cross-validation target)
+% ---------------------------------------------------------------------
+
+@misc{wsd4fedsrm2023,
+  title     = {Wearable sensor data for fatigue estimation during
+               shoulder rotation movements},
+  author    = {Yasar, Merve Nur and Sica, Marco and O'Flynn, Brendan and
+               Tedesco, Salvatore and Menolotto, Matteo},
+  year      = {2023},
+  month     = oct,
+  publisher = {Zenodo},
+  version   = {1},
+  doi       = {10.5281/zenodo.8415066},
+  url       = {https://zenodo.org/records/8415066},
+  note      = {CC-BY-4.0. Path G calibration source.},
+}
+
+@article{cerqueira2024semg,                              % [VERIFIED]
+  title     = {A Comprehensive Dataset of Surface Electromyography and
+               Self-Perceived Fatigue Levels for Muscle Fatigue Analysis},
+  author    = {Cerqueira, Sara M. and {Vilas Boas}, Rita and
+               Figueiredo, Joana and Santos, Cristina P.},
+  journal   = {Sensors},
+  volume    = {24},
+  number    = {24},
+  pages     = {8081},
+  year      = {2024},
+  doi       = {10.3390/s24248081},
+  url       = {https://www.mdpi.com/1424-8220/24/24/8081},
+  note      = {n=13, 8 upper-limb muscles, self-perceived fatigue.
+               Cited as future cross-validation target in
+               \S{Limitations}; does not include endurance-time
+               protocol so not a Path G replacement.},
+}
+
+% ---------------------------------------------------------------------
+% Related work (occupational sEMG + manual handling)
+% ---------------------------------------------------------------------
+
+@article{mudiyanselage2021ergonomic,                     % [VERIFIED]
+  title     = {Automated Workers' Ergonomic Risk Assessment in Manual
+               Material Handling Using {sEMG} Wearable Sensors and
+               Machine Learning},
+  author    = {Mudiyanselage, Srimantha E. and Nguyen, Phuong H. D. and
+               Rajabi, Mohammad Sadra and Akhavian, Reza},
+  journal   = {Electronics},
+  volume    = {10},
+  number    = {20},
+  pages     = {2558},
+  year      = {2021},
+  doi       = {10.3390/electronics10202558},
+  eprint    = {2109.15036},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2109.15036},
+}
+
+@article{peters2025wearable,                             % [VERIFIED]
+  title     = {Wearable sensors for classification of load-handling
+               tasks with machine learning algorithms in occupational
+               safety and health: a systematic literature review},
+  author    = {Peters, Markus and Potthast, Wolfgang and
+               Wischniewski, Sascha and Komnik, Igor},
+  journal   = {Ergonomics},
+  pages     = {902--920},
+  year      = {2025},
+  doi       = {10.1080/00140139.2025.2486193},
+  url       = {https://www.tandfonline.com/doi/full/10.1080/00140139.2025.2486193},
+  note      = {Open Access (CC-BY) at Taylor \& Francis. Institutional
+               OA copy hosted by BAuA (corresponding author's federal
+               employer): https://www.baua.de/DE/Angebote/Publikationen/
+               Aufsaetze/artikel4091.pdf -- requires browser
+               User-Agent + Referer to fetch (urllib alone gets 403).
+               Authors verified against three sources: Taylor \&
+               Francis citation block, BAuA Division 2 publications
+               listing, and two 2025--2026 citing reviews. Earlier
+               working entry attributed this article to ``Cataldi'' --
+               (corrected from local PDF page 1).},
+}
+
+@article{bonakdar2025fatigue,                            % [VERIFIED]
+  title     = {Perceived fatigue progression tracking during manual
+               handling tasks using {sEMG} recordings},
+  author    = {Bonakdar, Armin and Disselhorst-Klug, Catherine and
+               {Beltran Martinez}, Karla and Golabchi, Ali and
+               Tavakoli, Mahdi and Rouhani, Hossein},
+  journal   = {Journal of NeuroEngineering and Rehabilitation},
+  volume    = {22},
+  pages     = {245},
+  year      = {2025},
+  doi       = {10.1186/s12984-025-01787-6},
+  url       = {https://jneuroengrehab.biomedcentral.com/articles/10.1186/s12984-025-01787-6},
+  note      = {Open Access (CC-BY-NC-ND). Authors verified by
+               extracting page 1 of the local PDF
+               (corresponding author: Hossein Rouhani, Univ. Alberta).
+               Earlier working entry attributed this article to
+               ``Sun et al.'' -- that was incorrect; corrected
+               after PDF text extraction.},
+}

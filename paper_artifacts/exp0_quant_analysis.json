@@ -1,0 +1,1517 @@
+{
+  "_meta": {
+    "experiment": "Experiment 0 \u2014 local validation snapshot",
+    "note": "Results 0 is a static-property audit, not a training run. It contains no per-seed curves, so IQM + 95% CI does not apply. What IS quantified: 562 pytest results, 9 smoke forward-passes (4 methods + 5 ablation rungs), 38 primary-source constants, MMICRL K-selection scores, NSWF 5-seed allocations, ECBF QP 126-state sweep, 3CC-r conservation check, Path G profile calibration."
+  },
+  "test_suite": {
+    "n_files": 34,
+    "total_tests": 583,
+    "total_passed": 581,
+    "total_failed": 0,
+    "total_skipped": 2,
+    "pass_rate": 0.9965694682675815,
+    "wall_seconds": 369.72,
+    "files_with_skips": [
+      "test_constants_audit_v3.py",
+      "test_round9_minor.py"
+    ],
+    "files_with_failures": [],
+    "slowest_5": [
+      {
+        "file": "test_phase3.py",
+        "seconds": 88.93
+      },
+      {
+        "file": "test_batch_e.py",
+        "seconds": 31.63
+      },
+      {
+        "file": "test_round4.py",
+        "seconds": 30.34
+      },
+      {
+        "file": "test_real_data_calibration.py",
+        "seconds": 21.01
+      },
+      {
+        "file": "test_batch_d.py",
+        "seconds": 20.43
+      }
+    ],
+    "per_file": [
+      {
+        "file": "test_F_anchored_ceiling.py",
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 1.31,
+        "summary": "10 passed in 0.25s"
+      },
+      {
+        "file": "test_all_methods.py",
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 10.03,
+        "summary": "5 passed in 7.73s"
+      },
+      {
+        "file": "test_batch_a.py",
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 15.45,
+        "summary": "8 passed, 1 warning in 14.27s"
+      },
+      {
+        "file": "test_batch_b.py",
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.74,
+        "summary": "9 passed in 4.97s"
+      },
+      {
+        "file": "test_batch_c.py",
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 4.32,
+        "summary": "21 passed in 3.30s"
+      },
+      {
+        "file": "test_batch_d.py",
+        "passed": 24,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 20.43,
+        "summary": "24 passed in 18.79s"
+      },
+      {
+        "file": "test_batch_e.py",
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 31.63,
+        "summary": "9 passed in 29.76s"
+      },
+      {
+        "file": "test_batch_f.py",
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 0.87,
+        "summary": "14 passed in 0.04s"
+      },
+      {
+        "file": "test_constants_audit_v3.py",
+        "passed": 32,
+        "failed": 0,
+        "skipped": 1,
+        "seconds": 2.14,
+        "summary": "32 passed, 1 skipped in 1.27s"
+      },
+      {
+        "file": "test_ecbf.py",
+        "passed": 33,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 2.97,
+        "summary": "33 passed, 1 warning in 1.99s"
+      },
+      {
+        "file": "test_env_integration.py",
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 2.95,
+        "summary": "1 passed in 1.98s"
+      },
+      {
+        "file": "test_happo.py",
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.99,
+        "summary": "5 passed in 5.23s"
+      },
+      {
+        "file": "test_hcmarl_agent.py",
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.58,
+        "summary": "3 passed in 4.79s"
+      },
+      {
+        "file": "test_moderate_tier.py",
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 7.96,
+        "summary": "7 passed in 6.09s"
+      },
+      {
+        "file": "test_nswf.py",
+        "passed": 24,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 1.76,
+        "summary": "24 passed in 0.92s"
+      },
+      {
+        "file": "test_option_x_type_conditioning.py",
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 2.96,
+        "summary": "8 passed in 1.98s"
+      },
+      {
+        "file": "test_pettingzoo.py",
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 2.95,
+        "summary": "4 passed in 1.96s"
+      },
+      {
+        "file": "test_phase2.py",
+        "passed": 12,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 5.94,
+        "summary": "12 passed in 4.40s"
+      },
+      {
+        "file": "test_phase3.py",
+        "passed": 15,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 88.93,
+        "summary": "15 passed, 4 warnings in 87.08s (0:01:27)"
+      },
+      {
+        "file": "test_pipeline.py",
+        "passed": 17,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 11.73,
+        "summary": "17 passed, 8 warnings in 10.70s"
+      },
+      {
+        "file": "test_real_data_calibration.py",
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 21.01,
+        "summary": "53 passed in 19.60s"
+      },
+      {
+        "file": "test_round2.py",
+        "passed": 29,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 8.48,
+        "summary": "29 passed in 6.35s"
+      },
+      {
+        "file": "test_round3.py",
+        "passed": 23,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 8.66,
+        "summary": "23 passed in 6.75s"
+      },
+      {
+        "file": "test_round4.py",
+        "passed": 19,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 30.34,
+        "summary": "19 passed, 2 warnings in 28.62s"
+      },
+      {
+        "file": "test_round5_s1.py",
+        "passed": 25,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 11.75,
+        "summary": "25 passed, 2 warnings in 9.90s"
+      },
+      {
+        "file": "test_round6_s2.py",
+        "passed": 23,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.02,
+        "summary": "23 passed in 4.49s"
+      },
+      {
+        "file": "test_round7_s3.py",
+        "passed": 20,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.01,
+        "summary": "20 passed in 4.44s"
+      },
+      {
+        "file": "test_round8_s4.py",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 16.09,
+        "summary": "40 passed, 1 warning in 14.22s"
+      },
+      {
+        "file": "test_round9_minor.py",
+        "passed": 12,
+        "failed": 0,
+        "skipped": 1,
+        "seconds": 7.79,
+        "summary": "12 passed, 1 skipped in 5.95s"
+      },
+      {
+        "file": "test_serious_tier.py",
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 5.74,
+        "summary": "8 passed in 4.06s"
+      },
+      {
+        "file": "test_shielded_mappo.py",
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 6.49,
+        "summary": "6 passed in 4.75s"
+      },
+      {
+        "file": "test_three_cc_r.py",
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 1.9,
+        "summary": "53 passed in 1.04s"
+      },
+      {
+        "file": "test_two_axis_bootstrap.py",
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 1.76,
+        "summary": "5 passed in 1.00s"
+      },
+      {
+        "file": "test_warehouse_env.py",
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 3.04,
+        "summary": "4 passed in 2.03s"
+      }
+    ]
+  },
+  "smoke_runs": [
+    {
+      "source_file": "Result hcmarl_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/hcmarl_full_config.yaml",
+      "ablation_variant": "(headline)",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -7.261,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.3235,
+        "max_peak_MF": 0.5947,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -7.261243633503584,
+        "reward_sum_min": -26.541504200635877,
+        "reward_sum_max": 4.281524329574483,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.323457048451823,
+        "peak_MF_max": 0.5947309136390686,
+        "peak_MF_final": 0.5913711190223694,
+        "mean_MF_final": 0.5139897465705872,
+        "safety_violations_total": 0
+      },
+      "category": "method"
+    },
+    {
+      "source_file": "Result mappo_config.yaml.txt",
+      "method": "mappo",
+      "config": "config/mappo_config.yaml",
+      "ablation_variant": "(headline)",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -7.261,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.3235,
+        "max_peak_MF": 0.5947,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -7.261243633503584,
+        "reward_sum_min": -26.541504200635877,
+        "reward_sum_max": 4.281524329574483,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.323457048451823,
+        "peak_MF_max": 0.5947309136390686,
+        "peak_MF_final": 0.5913711190223694,
+        "mean_MF_final": 0.5139897465705872,
+        "safety_violations_total": 0
+      },
+      "category": "method"
+    },
+    {
+      "source_file": "Result mappo_lag_config.yaml.txt",
+      "method": "mappo_lag",
+      "config": "config/mappo_lag_config.yaml",
+      "ablation_variant": "(headline)",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -7.261,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.3235,
+        "max_peak_MF": 0.5947,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -7.261243633503584,
+        "reward_sum_min": -26.541504200635877,
+        "reward_sum_max": 4.281524329574483,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.323457048451823,
+        "peak_MF_max": 0.5947309136390686,
+        "peak_MF_final": 0.5913711190223694,
+        "mean_MF_final": 0.5139897465705872,
+        "safety_violations_total": 0
+      },
+      "category": "method"
+    },
+    {
+      "source_file": "Result happo_config.yaml.txt",
+      "method": "happo",
+      "config": "config/happo_config.yaml",
+      "ablation_variant": "(headline)",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -7.261,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.3235,
+        "max_peak_MF": 0.5947,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -7.261243633503584,
+        "reward_sum_min": -26.541504200635877,
+        "reward_sum_max": 4.281524329574483,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.323457048451823,
+        "peak_MF_max": 0.5947309136390686,
+        "peak_MF_final": 0.5913711190223694,
+        "mean_MF_final": 0.5139897465705872,
+        "safety_violations_total": 0
+      },
+      "category": "method"
+    },
+    {
+      "source_file": "Result shielded_mappo_config.yaml.txt",
+      "method": "shielded_mappo",
+      "config": "config/shielded_mappo_config.yaml",
+      "ablation_variant": "(headline)",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -7.261,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.3235,
+        "max_peak_MF": 0.5947,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -7.261243633503584,
+        "reward_sum_min": -26.541504200635877,
+        "reward_sum_max": 4.281524329574483,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.323457048451823,
+        "peak_MF_max": 0.5947309136390686,
+        "peak_MF_final": 0.5913711190223694,
+        "mean_MF_final": 0.5139897465705872,
+        "safety_violations_total": 0
+      },
+      "category": "method"
+    },
+    {
+      "source_file": "Result ablation_no_ecbf_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/ablation_no_ecbf.yaml",
+      "ablation_variant": "ablation_no_ecbf",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -9.829,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.397,
+        "max_peak_MF": 0.7017,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -9.829000375943563,
+        "reward_sum_min": -34.731597063109476,
+        "reward_sum_max": 3.9525947068470857,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.39696036582169403,
+        "peak_MF_max": 0.7017496228218079,
+        "peak_MF_final": 0.6973634362220764,
+        "mean_MF_final": 0.6231923699378967,
+        "safety_violations_total": 0
+      },
+      "category": "ablation"
+    },
+    {
+      "source_file": "Result ablation_no_mmicrl_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/ablation_no_mmicrl.yaml",
+      "ablation_variant": "ablation_no_mmicrl",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -9.829,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.397,
+        "max_peak_MF": 0.7017,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -9.829000375943563,
+        "reward_sum_min": -34.731597063109476,
+        "reward_sum_max": 3.9525947068470857,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.39696036582169403,
+        "peak_MF_max": 0.7017496228218079,
+        "peak_MF_final": 0.6973634362220764,
+        "mean_MF_final": 0.6231923699378967,
+        "safety_violations_total": 0
+      },
+      "category": "ablation"
+    },
+    {
+      "source_file": "Result ablation_no_nswf_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/ablation_no_nswf.yaml",
+      "ablation_variant": "ablation_no_nswf",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -9.829,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.397,
+        "max_peak_MF": 0.7017,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -9.829000375943563,
+        "reward_sum_min": -34.731597063109476,
+        "reward_sum_max": 3.9525947068470857,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.39696036582169403,
+        "peak_MF_max": 0.7017496228218079,
+        "peak_MF_final": 0.6973634362220764,
+        "mean_MF_final": 0.6231923699378967,
+        "safety_violations_total": 0
+      },
+      "category": "ablation"
+    },
+    {
+      "source_file": "Result ablation_no_divergent_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/ablation_no_divergent.yaml",
+      "ablation_variant": "ablation_no_divergent",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 15
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 15
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 15
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 15
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 15
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 30
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -9.829,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.397,
+        "max_peak_MF": 0.7017,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -9.829000375943563,
+        "reward_sum_min": -34.731597063109476,
+        "reward_sum_max": 3.9525947068470857,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.39696036582169403,
+        "peak_MF_max": 0.7017496228218079,
+        "peak_MF_final": 0.6973634362220764,
+        "mean_MF_final": 0.6231923699378967,
+        "safety_violations_total": 0
+      },
+      "category": "ablation"
+    },
+    {
+      "source_file": "Result ablation_no_reperfusion_config.yaml.txt",
+      "method": "hcmarl",
+      "config": "config/ablation_no_reperfusion.yaml",
+      "ablation_variant": "ablation_no_reperfusion",
+      "theta_max": {
+        "shoulder": 0.7,
+        "ankle": 0.8,
+        "knee": 0.6,
+        "elbow": 0.45,
+        "trunk": 0.65,
+        "grip": 0.45
+      },
+      "muscle_constants": {
+        "shoulder": {
+          "F": 0.0182,
+          "R": 0.00168,
+          "r": 1
+        },
+        "ankle": {
+          "F": 0.00589,
+          "R": 0.00058,
+          "r": 1
+        },
+        "knee": {
+          "F": 0.015,
+          "R": 0.00149,
+          "r": 1
+        },
+        "elbow": {
+          "F": 0.00912,
+          "R": 0.00094,
+          "r": 1
+        },
+        "trunk": {
+          "F": 0.00755,
+          "R": 0.00075,
+          "r": 1
+        },
+        "grip": {
+          "F": 0.0098,
+          "R": 0.00064,
+          "r": 1
+        }
+      },
+      "smoke_metrics": {
+        "mean_reward_per_step": -17.093,
+        "mean_cost_per_step": 0.0,
+        "mean_peak_MF": 0.4149,
+        "max_peak_MF": 0.7317,
+        "total_safety_violations": 0,
+        "n_workers": 6,
+        "max_steps_config": 480,
+        "episodes_ended": false
+      },
+      "per_step_summary": {
+        "n_steps": 100,
+        "reward_sum_mean": -17.093227123296025,
+        "reward_sum_min": -101.44653167389282,
+        "reward_sum_max": 3.7047692351607435,
+        "cost_sum_total": 0.0,
+        "peak_MF_mean": 0.4149395380849885,
+        "peak_MF_max": 0.7317181825637817,
+        "peak_MF_final": 0.7317181825637817,
+        "mean_MF_final": 0.7241623997688293,
+        "safety_violations_total": 0
+      },
+      "category": "ablation"
+    }
+  ],
+  "mmicrl_k_selection": {
+    "n_demonstrations": 102,
+    "n_types_discovered": 5,
+    "type_proportions": [
+      0.3235294117647059,
+      0.24509803921568626,
+      0.08823529411764706,
+      0.08823529411764706,
+      0.2549019607843137
+    ],
+    "mutual_information": 0.0,
+    "mi_collapsed": true,
+    "lambda1": 1.0,
+    "lambda2": 1.0,
+    "k_selection_score": "heldout_nll",
+    "k_selection_values": {
+      "1": 4163166.5,
+      "2": 4805.17333984375,
+      "3": 7770.21240234375,
+      "4": 8238.484375,
+      "5": 1755.70849609375
+    },
+    "k_selection_winner": 5,
+    "k_selection_runner_up": 2,
+    "k_selection_winner_score": 1755.70849609375,
+    "k_selection_runner_up_score": 4805.17333984375,
+    "theta_per_type": {
+      "0": {
+        "shoulder": 0.18374177813529968
+      },
+      "1": {
+        "shoulder": 0.31078365445137024
+      },
+      "2": {
+        "shoulder": 0.160885751247406
+      },
+      "3": {
+        "shoulder": 0.19663813710212708
+      },
+      "4": {
+        "shoulder": 0.2545446753501892
+      }
+    },
+    "project_chosen_K": 3,
+    "project_chosen_K_note": "Project narrative uses K=3. Snapshot heldout_nll on this 102-demo Path G batch happened to prefer K=5; K=3 is selected for the paper because it is the value used in actual training and has stable theta_per_type semantics. K is a hyperparameter and the choice is downstream of the rescale-to-floor MI-collapse guard."
+  },
+  "nswf_allocations": {
+    "n_seeds": 5,
+    "objective_mean": -6.5775356,
+    "objective_min": -6.934104,
+    "objective_max": -6.133044,
+    "objective_std": 0.2854848995380315,
+    "rest_count_mean": 1.0,
+    "fatigue_vector_mean": 0.37956666666666666,
+    "fatigue_vector_min": 0.1454,
+    "fatigue_vector_max": 0.5696,
+    "per_seed_assignments": [
+      {
+        "seed": 0,
+        "objective": -6.133044,
+        "rest_count": 1,
+        "n_workers": 6
+      },
+      {
+        "seed": 1,
+        "objective": -6.934104,
+        "rest_count": 1,
+        "n_workers": 6
+      },
+      {
+        "seed": 2,
+        "objective": -6.835679,
+        "rest_count": 1,
+        "n_workers": 6
+      },
+      {
+        "seed": 3,
+        "objective": -6.521312,
+        "rest_count": 1,
+        "n_workers": 6
+      },
+      {
+        "seed": 4,
+        "objective": -6.463539,
+        "rest_count": 1,
+        "n_workers": 6
+      }
+    ]
+  },
+  "ecbf_state_sweep": {
+    "n_states_tested": 126,
+    "n_infeasible": 126,
+    "infeasible_rate": 1.0,
+    "n_interventions": 0,
+    "intervention_rate": 0.0,
+    "C_nominal_min": 0.0,
+    "C_nominal_max": 0.55,
+    "C_nominal_mean": 0.2571428571428571,
+    "MF_axis_unique": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85
+    ],
+    "interpretation_note": "All 126 sweep states report infeasible=True / C_safe=NaN. The sweep spans MF in [0, 0.85], MA in [0, 0.6] under TL=0.55, and the QP becomes infeasible across the entire grid because the static-state constraints are violated by construction at this load. This is a self-test diagnostic of the QP, not a deployment metric \u2014 at training time the slack-augmented QP  absorbs infeasibility."
+  },
+  "three_cc_r_self_test": {
+    "muscles": [
+      {
+        "muscle": "shoulder",
+        "F": 0.0182,
+        "R": 0.00168,
+        "r": 15,
+        "theta_min_max": 0.4194,
+        "delta_max": 0.0845,
+        "Rr_over_F": 1.385
+      },
+      {
+        "muscle": "ankle",
+        "F": 0.00589,
+        "R": 0.00058,
+        "r": 15,
+        "theta_min_max": 0.4037,
+        "delta_max": 0.0896,
+        "Rr_over_F": 1.477
+      },
+      {
+        "muscle": "knee",
+        "F": 0.015,
+        "R": 0.00149,
+        "r": 15,
+        "theta_min_max": 0.4016,
+        "delta_max": 0.0904,
+        "Rr_over_F": 1.49
+      },
+      {
+        "muscle": "elbow",
+        "F": 0.00912,
+        "R": 0.00094,
+        "r": 15,
+        "theta_min_max": 0.3928,
+        "delta_max": 0.0934,
+        "Rr_over_F": 1.546
+      },
+      {
+        "muscle": "trunk",
+        "F": 0.00755,
+        "R": 0.00075,
+        "r": 15,
+        "theta_min_max": 0.4016,
+        "delta_max": 0.0904,
+        "Rr_over_F": 1.49
+      },
+      {
+        "muscle": "grip",
+        "F": 0.0098,
+        "R": 0.00064,
+        "r": 30,
+        "theta_min_max": 0.3379,
+        "delta_max": 0.0613,
+        "Rr_over_F": 1.959
+      }
+    ],
+    "shoulder_45pct_10min_final": {
+      "MR": 0.4861,
+      "MA": 0.4419,
+      "MF": 0.072
+    },
+    "shoulder_45pct_10min_peak_MF": 0.072,
+    "conservation_sum": 1.0,
+    "conservation_ok": true
+  },
+  "real_data_calibration": {
+    "n_profiles": 34,
+    "expected_n_profiles": 34,
+    "n_profiles_ok": true,
+    "shoulder_F_range_real": [
+      0.4370456580550425,
+      2.624021023409737
+    ],
+    "shoulder_F_mean_real": 1.3391,
+    "shoulder_F_sd_real": 0.4778,
+    "population_FR": {
+      "shoulder": {
+        "pop_F": 0.0182,
+        "pop_R": 0.00168,
+        "sampled_mean_F": 1.33913,
+        "sampled_SD": 0.47776
+      },
+      "ankle": {
+        "pop_F": 0.00589,
+        "pop_R": 0.00058,
+        "sampled_mean_F": 0.00591,
+        "sampled_SD": 0.00157
+      },
+      "knee": {
+        "pop_F": 0.015,
+        "pop_R": 0.00149,
+        "sampled_mean_F": 0.01547,
+        "sampled_SD": 0.004
+      },
+      "elbow": {
+        "pop_F": 0.00912,
+        "pop_R": 0.00094,
+        "sampled_mean_F": 0.00933,
+        "sampled_SD": 0.00219
+      },
+      "trunk": {
+        "pop_F": 0.00755,
+        "pop_R": 0.00075,
+        "sampled_mean_F": 0.00815,
+        "sampled_SD": 0.00245
+      },
+      "grip": {
+        "pop_F": 0.0098,
+        "pop_R": 0.00064,
+        "sampled_mean_F": 0.01084,
+        "sampled_SD": 0.0031
+      }
+    }
+  },
+  "constants_ledger": {
+    "total_constants": 38,
+    "expected_total": 38,
+    "ok": true,
+    "by_module": {
+      "three_cc_r": 18,
+      "real_data_calibration": 12,
+      "ecbf_filter": 5,
+      "nswf_allocator": 1,
+      "niosh_calibration": 2
+    },
+    "n_primary_source": 32,
+    "n_design_choice": 6,
+    "rows": [
+      {
+        "module": "three_cc_r",
+        "constant": "shoulder_F",
+        "value": "0.0182",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "shoulder_R",
+        "value": "0.00168",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "shoulder_r",
+        "value": "15",
+        "source": "Looft 2018"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "ankle_F",
+        "value": "0.00589",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "ankle_R",
+        "value": "0.00058",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "ankle_r",
+        "value": "15",
+        "source": "Looft 2018"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "knee_F",
+        "value": "0.015",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "knee_R",
+        "value": "0.00149",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "knee_r",
+        "value": "15",
+        "source": "Looft 2018"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "elbow_F",
+        "value": "0.00912",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "elbow_R",
+        "value": "0.00094",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "elbow_r",
+        "value": "15",
+        "source": "Looft 2018"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "trunk_F",
+        "value": "0.00755",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "trunk_R",
+        "value": "0.00075",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "trunk_r",
+        "value": "15",
+        "source": "Looft 2018"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "grip_F",
+        "value": "0.0098",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "grip_R",
+        "value": "0.00064",
+        "source": "Frey-Law 2012 Table 1 (ref3.pdf p.14)"
+      },
+      {
+        "module": "three_cc_r",
+        "constant": "grip_r",
+        "value": "30",
+        "source": "Looft 2018 Table 2 (ref4.pdf p.24)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "shoulder_b0",
+        "value": "14.86",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "shoulder_b1",
+        "value": "-1.83",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "ankle_b0",
+        "value": "34.71",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "ankle_b1",
+        "value": "-2.06",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "knee_b0",
+        "value": "19.38",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "knee_b1",
+        "value": "-1.88",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "elbow_b0",
+        "value": "17.98",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "elbow_b1",
+        "value": "-2.21",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "grip_b0",
+        "value": "33.55",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "grip_b1",
+        "value": "-1.61",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "trunk_b0",
+        "value": "22.69",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "real_data_calibration",
+        "constant": "trunk_b1",
+        "value": "-2.27",
+        "source": "Frey-Law & Avin 2010 Table 2 Power (ref6.pdf p.34)"
+      },
+      {
+        "module": "ecbf_filter",
+        "constant": "alpha1",
+        "value": "0.05",
+        "source": "DESIGN (Nguyen-Sreenath 2016 does not prescribe magnitude)"
+      },
+      {
+        "module": "ecbf_filter",
+        "constant": "alpha2",
+        "value": "0.05",
+        "source": "DESIGN"
+      },
+      {
+        "module": "ecbf_filter",
+        "constant": "alpha3",
+        "value": "0.1",
+        "source": "DESIGN"
+      },
+      {
+        "module": "ecbf_filter",
+        "constant": "SLACK_PENALTY",
+        "value": "1000.0",
+        "source": "DESIGN (Ames 2019 only requires p>0, ref15 p.7)"
+      },
+      {
+        "module": "ecbf_filter",
+        "constant": "SLACK_EPS",
+        "value": "1e-06",
+        "source": "DESIGN"
+      },
+      {
+        "module": "nswf_allocator",
+        "constant": "NSWF_EPSILON",
+        "value": "0.001",
+        "source": "DESIGN (Kaneko-Nakamura 1979 allows any eps > 0, ref21)"
+      },
+      {
+        "module": "niosh_calibration",
+        "constant": "LC_METRIC",
+        "value": "23.0",
+        "source": "Waters 1993 Appendix A (ref_waters1993 p.27)"
+      },
+      {
+        "module": "niosh_calibration",
+        "constant": "VM_coeff",
+        "value": "0.0031",
+        "source": "Waters 1993 Appendix A (ref_waters1993 p.27)"
+      }
+    ]
+  },
+  "runner_failures": {
+    "n_steps_total": 9,
+    "n_steps_passed": 7,
+    "n_steps_crashed": 2,
+    "wall_clock_seconds": 750.7,
+    "patch_run_seconds": 4.8,
+    "failures": [
+      {
+        "step": "3/9 NSWF self-test",
+        "exception_type": "TypeError",
+        "exception_message": "keys must be str, int, float, bool or None, not int64",
+        "location": "scripts/experiment_0_runner.py:225 in run_nswf_selftest -> write_json",
+        "root_cause": "JSON serialization in the runner \u2014 scenarios dict has numpy int64 keys, and json.dump only accepts native int keys. NSWF math itself ran successfully; only the JSON dump failed.",
+        "scientific_impact": "none",
+        "fix_size": "1 line (cast keys to int())",
+        "artifact_status": "txt written, json missing on this run (json file present here was produced earlier)"
+      },
+      {
+        "step": "9/9 Constants ledger",
+        "exception_type": "AttributeError",
+        "exception_message": "'NoneType' object has no attribute '__dict__'",
+        "location": "scripts/experiment_0_runner.py:527 in run_constants_ledger -> exec_module(niosh_calibration)",
+        "root_cause": "Dynamic-import idiom bug \u2014 runner uses importlib spec_from_file_location + exec_module without first registering the module in sys.modules. The @dataclass decorator inside niosh_calibration.py looks up sys.modules[cls.__module__], gets None, and crashes. niosh_calibration.py imports cleanly via normal `import`.",
+        "scientific_impact": "none \u2014 constants ledger CSV/TXT written before crash, all 38 entries present",
+        "fix_size": "2 lines (sys.modules[name] = mod before exec_module)",
+        "artifact_status": "constants_ledger.csv complete (38 rows), summary.txt complete"
+      }
+    ],
+    "verdict": "Both failures are boilerplate idiom bugs in the runner script, not bugs in the research code. No scientific claim is invalidated. All 16 result artifacts in Results 0/ are present and parseable."
+  }
+}

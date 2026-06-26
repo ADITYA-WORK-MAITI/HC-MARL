@@ -1,0 +1,83 @@
+# ==========================================================================
+# HC-MARL Default Configuration
+# ==========================================================================
+#
+# This file configures the end-to-end pipeline (Section 7.3) with
+# reasonable defaults for a warehouse human-robot collaboration scenario.
+#
+# All theta_max values satisfy Assumption 5.5 (Eq 26):
+#   theta_max >= F / (F + R*r)  for each muscle group.
+# ==========================================================================
+
+# -- Workers --
+num_workers: 4
+
+# -- Muscle groups to track per worker --
+# Subset of {shoulder, ankle, knee, elbow, trunk, grip}
+muscle_names:
+  - shoulder
+  - elbow
+  - grip
+
+# -- Simulation parameters --
+dt: 1.0        # Integration time step [minutes]
+kp: 1.0        # Baseline neural drive gain (Eq 35)
+
+# -- Productive tasks (Def 7.1) --
+# Each task specifies target loads (fraction of MVC) per muscle group.
+# -- Productive tasks (Def 7.1) --
+# %MVC values from published ergonomics literature (see docs/data_sources.md)
+tasks:
+  - name: box_lift_overhead
+    demands:
+      shoulder: 0.45   # Hoozemans et al. 2004
+      elbow: 0.30      # Hoozemans et al. 2004
+      grip: 0.55       # Hoozemans et al. 2004
+
+  - name: carry_heavy
+    demands:
+      shoulder: 0.25   # Snook & Ciriello 1991
+      elbow: 0.20      # Snook & Ciriello 1991
+      grip: 0.45       # Snook & Ciriello 1991
+
+  - name: sorting_light
+    demands:
+      shoulder: 0.10   # Nordander et al. 2000
+      elbow: 0.15      # Nordander et al. 2000
+      grip: 0.20       # Nordander et al. 2000
+
+  - name: packing
+    demands:
+      shoulder: 0.15   # Nordander et al. 2000
+      elbow: 0.20      # Nordander et al. 2000
+      grip: 0.30       # Nordander et al. 2000
+
+# -- ECBF Safety Filter Parameters (Section 5) --
+# Per-muscle configuration. theta_max must satisfy Eq 26.
+# Reference thresholds (Table 2, with corrected r=15 for grip):
+#   shoulder: theta_min_max = 62.7%
+#   elbow:    theta_min_max = 39.3%
+#   grip:     theta_min_max = 32.7%  (corrected from 19.5% after r=30→15)
+ecbf:
+  shoulder:
+    theta_max: 0.70    # Above 62.7% threshold (Eq 26)
+    alpha1: 0.5        # ECBF gain (class-K, Eq 16)
+    alpha2: 0.5        # ECBF gain (class-K, Eq 17)
+    alpha3: 0.5        # Resting-floor CBF gain (Eq 23)
+
+  elbow:
+    theta_max: 0.45    # Above 39.3% threshold (Eq 26)
+    alpha1: 0.5
+    alpha2: 0.5
+    alpha3: 0.5
+
+  grip:
+    theta_max: 0.45    # margin 11.2pp over rest-phase floor
+    alpha1: 0.5
+    alpha2: 0.5
+    alpha3: 0.5
+
+# -- NSWF Allocator Parameters (Section 6) --
+nswf:
+  kappa: 1.0         # Disagreement utility scaling (Eq 32)
+  epsilon: 0.001     # Rest-task surplus (Eq 31)
