@@ -1,0 +1,47 @@
+# Experiment 1 — provenance snapshot
+Generated: 2026-05-04 04:54:07 UTC
+
+## Git
+
+hash:    ad14aab56526f11d84be7b77a13fa8c30c2c27ff
+subject: RUNBOOK_EXP1: amend to 5-method grid (MACPO dropped, see prior commit)
+author:  root <[e-mail removed]>
+date:    2026-05-02 16:22:18 +0530
+
+## Local-only commits ahead of origin (preserved as Results 1/0001-*.patch and 0002-*.patch)
+ad14aab RUNBOOK_EXP1: amend to 5-method grid (MACPO dropped, see prior commit)
+2d4a4c2 EXP1 grid: drop MACPO (50K probe lam=0, Safe=20% — not converging on L4)
+
+## Python + Torch
+Python 3.12.3
+torch: 2.6.0+cu124 cuda: True device: NVIDIA L4
+
+## Hardware
+NVIDIA L4, 23034 MiB, 570.133.20
+NVIDIA L4, 23034 MiB, 570.133.20
+CPU(s):                               50
+Model name:                           Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz
+               total        used        free      shared  buff/cache   available
+Mem:           201Gi       3.2Gi       187Gi       6.5Mi        12Gi       198Gi
+
+## Determinism state
+use_deterministic_algorithms(True): True
+CUBLAS_WORKSPACE_CONFIG:            True
+matmul_precision(highest):          True
+Currently in env: <not set in shell>
+
+## Run timing
+Grid started: 2026-05-02 ~10:54 UTC (16:24 IST)
+Grid ended:   2026-05-04 04:54 UTC
+Wall-clock:   ~41h 50m
+Grid spend:   ~Rs 4,100 (estimated 41.85 hr * Rs 98/hr)
+Pre-grid:     ~Rs 400 (probes + idle)
+Total:        ~Rs 4,500
+Hard cap:     Rs 5,500 (raised from 4,300 mid-run; raised from 4,000 before that; original 2,500)
+
+## Method timing summary
+  HCMARL:         ~5h:14m wall (10 seeds, 6-way parallel)
+  MAPPO:          ~5h         wall
+  MAPPO_LAG:      ~7h         wall
+  HAPPO:          ~13h        wall (per-agent sequential CPU-bound)
+  SHIELDED_MAPPO: ~12h        wall (shield log_prob recompute)

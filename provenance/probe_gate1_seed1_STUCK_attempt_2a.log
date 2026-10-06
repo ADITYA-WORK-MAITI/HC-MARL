@@ -1,0 +1,1 @@
+2026-05-06 12:47:37 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)

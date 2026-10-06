@@ -38,7 +38,7 @@ def stratified_bootstrap_iqm_ci(
     scores: np.ndarray,
     n_resamples: int = 10_000,
     ci: float = 0.95,
-    seed: int | None = 4271316,
+    seed: int | None = 20260416,
 ) -> Tuple[float, float]:
     """Stratified bootstrap 95% CI for the IQM.
 
@@ -92,7 +92,7 @@ def worker_seed_stratified_bootstrap_iqm_ci(
     score_matrix: np.ndarray,
     n_resamples: int = 10_000,
     ci: float = 0.95,
-    seed: int | None = 4271502,
+    seed: int | None = 20260502,
 ) -> Tuple[float, float]:
     """Two-axis stratified bootstrap of IQM over (worker, seed) pairs.
 

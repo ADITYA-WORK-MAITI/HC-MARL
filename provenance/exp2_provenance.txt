@@ -1,0 +1,26 @@
+# Experiment 2 v5 — provenance snapshot
+Generated: 2026-05-06 05:45:36 UTC
+
+## Git
+hash:    aa5139adc493f079b33666df82fd07f4493c3a36
+subject: EXP2 v5: ablation alpha fix + RUNBOOK update for 60-run re-run
+author:  Aditya Maiti <[e-mail removed]>
+date:    2026-05-05 15:39:44 +0530
+
+## Python + Torch
+Python 3.12.3
+torch: 2.6.0+cu124 cuda: True device: NVIDIA L4
+
+## Hardware
+NVIDIA L4, 23034 MiB, 570.133.20
+NVIDIA L4, 23034 MiB, 570.133.20
+CPU(s):                               50
+Model name:                           AMD EPYC 9554 64-Core Processor
+               total        used        free      shared  buff/cache   available
+Mem:           201Gi       3.0Gi       187Gi       6.5Mi        12Gi       198Gi
+
+## Determinism state
+use_deterministic_algorithms(True): True
+CUBLAS_WORKSPACE_CONFIG:            True
+matmul_precision(highest):          True
+Currently in env: <not set in shell>

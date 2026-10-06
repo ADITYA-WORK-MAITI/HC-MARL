@@ -1,11 +1,12 @@
 # HC-MARL: Human-Centric Multi-Agent Reinforcement Learning
 
-Companion code for the paper *Fatigue-Aware Cooperative Multi-Agent RL on a
-Calibrated 3CC-r Warehouse Benchmark: An Empirical Audit of Four Modular
-Components*, by Aditya Maiti, Amrit Pal Singh, Amar Arora, and Arshpreet Kaur.
+Companion code for the paper *Fatigue-Aware Cooperative Multi-Agent
+Reinforcement Learning on a Simulated Warehouse Benchmark: An Empirical Audit
+of Four Modular Components*, by Aditya Maiti, Amrit Pal Singh, Amar Arora, and
+Arshpreet Kaur.
 
 The codebase implements a four-component framework for fatigue-aware
-cooperative task allocation in a calibrated warehouse benchmark:
+cooperative task allocation in a simulated warehouse benchmark:
 
 1. **3CC-r physiological fatigue model** — three-compartment ODE with a
    reperfusion factor (`hcmarl/three_cc_r.py`).
@@ -15,6 +16,37 @@ cooperative task allocation in a calibrated warehouse benchmark:
    divergent disagreement utility (`hcmarl/nswf_allocator.py`).
 4. **Multi-Modal Inverse Constrained RL (MMICRL)** — CFDE normalising flows
    for per-worker safety thresholds (`hcmarl/mmicrl.py`).
+
+## Notes for readers of the paper
+
+- **Time unit.** The fatigue rates in `hcmarl/three_cc_r.py` are the population
+  rates of Frey-Law et al. (2012). These rates are per second. The environment
+  integrates with a step of 1, so each step is one second, and an episode of
+  480 steps covers eight minutes. Some docstrings and comments, and the
+  configuration file `config/hcmarl_full_config.yaml`, describe the rates as
+  per minute and an episode as an eight-hour shift. They are kept unchanged,
+  so that the code matches the release that the paper audits. See Section VII-G
+  of the paper.
+- **Safety filter used in training.** Training applies the filter in closed form
+  inside the environment step (`hcmarl/envs/pettingzoo_wrapper.py`). Training
+  does not use the OSQP version in `hcmarl/ecbf_filter.py`.
+- **Allocator.** All 110 training runs of EXP1 and EXP2 use the discrete action
+  mode. In this mode, the policy picks the task of each worker directly, and the
+  environment does not use the output of the allocator (paper, Section VII-E).
+- **Test count.** The paper cites the stored EXP0 record
+  (`paper_artifacts/exp0_quant_analysis.json`), which lists 583 tests: 581
+  passed and 2 skipped. The count under Quick start is for the released suite.
+- **Python version.** The pinned numpy 1.26.4 and scipy 1.13.1 have wheels for
+  Python 3.9 to 3.12 only. Use Python 3.10, 3.11 or 3.12.
+- **Bootstrap seeds.** `hcmarl/aggregation.py` and `scripts/analyze_results_4.py`
+  carry the seeds that produced the stored outputs in `paper_artifacts/`
+  (20260416, 20260502 and 20260426). The release of 10 May 2026 shipped other
+  values (4271316, 4271502 and 4271326); with those, the stored intervals do not
+  reproduce. The seeds were restored on 6 October 2026. No stored output changed.
+- **Provenance.** The folder `provenance/` holds the provenance snapshots and the
+  console logs of EXP1, EXP2 and the continuous-mode probe. They record the
+  devices (NVIDIA L4), Python 3.12.3, PyTorch 2.6.0+cu124, and the determinism
+  settings printed at the start of every run.
 
 ## Quick start
 
@@ -57,7 +89,7 @@ python scripts/run_ablations.py --matrix config/experiment_matrix.yaml
 python scripts/run_exp3_part1.py
 ```
 
-### Appendix F — continuous-mode probe (3 seeds × 50K steps)
+### Continuous-mode probe (3 seeds × 50K steps)
 
 ```bash
 python scripts/train.py --config config/exp2_continuous_probe_hcmarl.yaml
@@ -137,3 +169,6 @@ redownloading the raw dataset.
 
 MIT (see `LICENSE`). The WSD4FEDSRM dataset has its own CC-BY-4.0
 license; see `data/README.md` for attribution requirements.
+
+The flow layers in `hcmarl/mmicrl.py` are adapted from pytorch-flows by Ilya
+Kostrikov (MIT License). See `THIRD_PARTY_NOTICES.md`.

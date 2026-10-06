@@ -233,7 +233,7 @@ def probability_of_improvement(x: np.ndarray, y: np.ndarray, higher_is_better: b
 
 def pairwise_bootstrap(
     x: np.ndarray, y: np.ndarray, higher_is_better: bool,
-    n_boot: int = 5_000, seed: int = 4271326,
+    n_boot: int = 5_000, seed: int = 20260426,
 ) -> Dict[str, float]:
     x = np.asarray(x, dtype=np.float64); x = x[np.isfinite(x)]
     y = np.asarray(y, dtype=np.float64); y = y[np.isfinite(y)]

@@ -1,0 +1,126 @@
+Using device: cuda
+2026-05-06 09:40:07 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+Path G: loading pre-computed profiles from /root/hcmarl_project/config/pathg_profiles.json
+Generating demonstrations from calibrated profiles (Eq 35 controller)...
+  Generated 102 demonstrations from 34 workers
+  HELDOUT_NLL model selection for K:
+    K=1: heldout_nll=6704283.5000
+    K=2: heldout_nll=284044.3125
+    K=3: heldout_nll=47497.7852
+    K=4: heldout_nll=6160727.5000
+    K=5: heldout_nll=7474.6758
+  Selected K=5 (lowest heldout_nll=7474.6758)
+
+--- MMICRL Type Discovery Results ---
+  Demonstrations: 102
+  Types discovered: 5
+  Type proportions: ['0.13', '0.20', '0.32', '0.05', '0.30']
+  Mutual information I(tau;z): 0.0000
+  Objective value: 0.0000
+  Learned thresholds per type (raw):
+    Type 0: {shoulder: 0.215}
+    Type 1: {shoulder: 0.291}
+    Type 2: {shoulder: 0.182}
+    Type 3: {shoulder: 0.346}
+    Type 4: {shoulder: 0.234}
+  WARNING: MI (0.0000) < 0.01 -- latent types are behaviorally indistinguishable on this demo set. Effective per-worker theta will fall back to config floors (no MMICRL contribution). Consider multi-muscle demos or lambda1 tuning to restore discrimination.
+  Results saved to logs/hcmarl_anchor/seed_9/mmicrl/mmicrl_results.json
+2026-05-06 09:40:54 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+Using MMICRL-learned thresholds for 6 workers (5 types, rescaled into [floor,1]; floors: {'shoulder': 0.7, 'ankle': 0.8, 'knee': 0.6, 'elbow': 0.45, 'trunk': 0.65, 'grip': 0.45})
+  Effective per-worker theta_max: {'worker_0': {'shoulder': 0.7}, 'worker_1': {'shoulder': 0.7}, 'worker_2': {'shoulder': 0.7}, 'worker_3': {'shoulder': 0.7}, 'worker_4': {'shoulder': 0.7}, 'worker_5': {'shoulder': 0.7}}
+============================================================
+HC-MARL Training: HC-MARL (MAPPO + ECBF + NSWF)
+Seed: 9 | Device: cuda | Workers: 6
+Total steps: 2,000,000 | Eval every: 50,000
+Checkpoint dir: checkpoints/hcmarl_anchor/seed_9
+============================================================
+[Ep    50 | Step    24,000/2,000,000 | 375 sps] R=-9486.0 C= 962 Safe=45.21% SAI=0.413 Jain=1.000 PeakMF=0.679
+[Ep   100 | Step    48,000/2,000,000 | 377 sps] R=-3617.2 C=  92 Safe=86.67% SAI=0.424 Jain=1.000 PeakMF=0.679
+[Ep   150 | Step    72,000/2,000,000 | 377 sps] R=-4284.5 C= 395 Safe=61.25% SAI=0.371 Jain=1.000 PeakMF=0.694
+[Ep   200 | Step    96,000/2,000,000 | 378 sps] R=-2907.6 C=  40 Safe=91.88% SAI=0.397 Jain=1.000 PeakMF=0.682
+[Ep   250 | Step   120,000/2,000,000 | 378 sps] R=-3988.0 C= 350 Safe=62.29% SAI=0.369 Jain=1.000 PeakMF=0.689
+[Ep   300 | Step   144,000/2,000,000 | 378 sps] R=-3774.7 C= 303 Safe=66.88% SAI=0.377 Jain=1.000 PeakMF=0.688
+[Ep   350 | Step   168,000/2,000,000 | 378 sps] R=-2344.0 C=  30 Safe=94.58% SAI=0.372 Jain=1.000 PeakMF=0.685
+[Ep   400 | Step   192,000/2,000,000 | 378 sps] R=-1980.5 C=   2 Safe=99.58% SAI=0.359 Jain=1.000 PeakMF=0.681
+[Ep   450 | Step   216,000/2,000,000 | 378 sps] R=-1921.6 C=  13 Safe=97.71% SAI=0.351 Jain=1.000 PeakMF=0.686
+[Ep   500 | Step   240,000/2,000,000 | 378 sps] R=-1921.4 C=  39 Safe=93.33% SAI=0.348 Jain=1.000 PeakMF=0.685
+[Ep   550 | Step   264,000/2,000,000 | 378 sps] R=-1811.5 C=  49 Safe=92.08% SAI=0.345 Jain=1.000 PeakMF=0.682
+[Ep   600 | Step   288,000/2,000,000 | 378 sps] R=-1693.7 C=  30 Safe=95.21% SAI=0.343 Jain=1.000 PeakMF=0.684
+[Ep   650 | Step   312,000/2,000,000 | 378 sps] R=-1616.5 C=  21 Safe=96.04% SAI=0.340 Jain=1.000 PeakMF=0.686
+[Ep   700 | Step   336,000/2,000,000 | 378 sps] R=-1554.7 C=  20 Safe=96.46% SAI=0.339 Jain=1.000 PeakMF=0.688
+[Ep   750 | Step   360,000/2,000,000 | 378 sps] R=-1691.5 C=  54 Safe=93.12% SAI=0.336 Jain=1.000 PeakMF=0.687
+[Ep   800 | Step   384,000/2,000,000 | 378 sps] R=-1573.1 C=  32 Safe=95.21% SAI=0.340 Jain=1.000 PeakMF=0.690
+[Ep   850 | Step   408,000/2,000,000 | 378 sps] R=-1581.1 C=  40 Safe=92.50% SAI=0.336 Jain=1.000 PeakMF=0.688
+[Ep   900 | Step   432,000/2,000,000 | 378 sps] R=-1589.6 C=  37 Safe=93.96% SAI=0.339 Jain=1.000 PeakMF=0.688
+[Ep   950 | Step   456,000/2,000,000 | 378 sps] R=-1448.3 C=   9 Safe=98.54% SAI=0.338 Jain=1.000 PeakMF=0.687
+[Ep  1000 | Step   480,000/2,000,000 | 378 sps] R=-1482.4 C=  23 Safe=95.83% SAI=0.337 Jain=1.000 PeakMF=0.688
+[Ep  1050 | Step   504,000/2,000,000 | 378 sps] R=-1408.4 C=   3 Safe=99.38% SAI=0.336 Jain=1.000 PeakMF=0.687
+[Ep  1100 | Step   528,000/2,000,000 | 378 sps] R=-1377.7 C=   2 Safe=99.58% SAI=0.336 Jain=1.000 PeakMF=0.691
+[Ep  1150 | Step   552,000/2,000,000 | 378 sps] R=-1368.8 C=   5 Safe=98.96% SAI=0.337 Jain=1.000 PeakMF=0.693
+[Ep  1200 | Step   576,000/2,000,000 | 378 sps] R=-1578.5 C=  52 Safe=91.04% SAI=0.337 Jain=1.000 PeakMF=0.691
+[Ep  1250 | Step   600,000/2,000,000 | 378 sps] R=-1358.5 C=   4 Safe=99.17% SAI=0.337 Jain=1.000 PeakMF=0.693
+[Ep  1300 | Step   624,000/2,000,000 | 378 sps] R=-1458.8 C=  26 Safe=96.25% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  1350 | Step   648,000/2,000,000 | 378 sps] R=-1377.7 C=   6 Safe=98.75% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  1400 | Step   672,000/2,000,000 | 378 sps] R=-1522.2 C=  40 Safe=93.75% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  1450 | Step   696,000/2,000,000 | 378 sps] R=-1392.7 C=  11 Safe=98.33% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  1500 | Step   720,000/2,000,000 | 378 sps] R=-1618.8 C=  58 Safe=92.71% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  1550 | Step   744,000/2,000,000 | 378 sps] R=-1577.1 C=  52 Safe=92.08% SAI=0.336 Jain=1.000 PeakMF=0.695
+[Ep  1600 | Step   768,000/2,000,000 | 378 sps] R=-1652.5 C=  70 Safe=92.29% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  1650 | Step   792,000/2,000,000 | 378 sps] R=-1372.2 C=  11 Safe=98.75% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  1700 | Step   816,000/2,000,000 | 378 sps] R=-1390.2 C=  10 Safe=98.54% SAI=0.338 Jain=1.000 PeakMF=0.693
+[Ep  1750 | Step   840,000/2,000,000 | 378 sps] R=-1412.7 C=  19 Safe=96.88% SAI=0.336 Jain=1.000 PeakMF=0.695
+[Ep  1800 | Step   864,000/2,000,000 | 378 sps] R=-1359.1 C=   6 Safe=98.75% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  1850 | Step   888,000/2,000,000 | 378 sps] R=-1388.4 C=  12 Safe=98.33% SAI=0.336 Jain=1.000 PeakMF=0.695
+[Ep  1900 | Step   912,000/2,000,000 | 378 sps] R=-1432.1 C=  20 Safe=96.46% SAI=0.337 Jain=1.000 PeakMF=0.693
+[Ep  1950 | Step   936,000/2,000,000 | 378 sps] R=-1768.4 C=  94 Safe=85.42% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2000 | Step   960,000/2,000,000 | 378 sps] R=-1442.4 C=  20 Safe=95.83% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  2050 | Step   984,000/2,000,000 | 378 sps] R=-1413.0 C=  16 Safe=97.29% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  2100 | Step 1,008,000/2,000,000 | 378 sps] R=-2009.1 C= 144 Safe=85.83% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2150 | Step 1,032,000/2,000,000 | 378 sps] R=-1481.9 C=  35 Safe=94.38% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  2200 | Step 1,056,000/2,000,000 | 378 sps] R=-1361.7 C=  13 Safe=97.71% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  2250 | Step 1,080,000/2,000,000 | 378 sps] R=-1454.8 C=  32 Safe=95.00% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  2300 | Step 1,104,000/2,000,000 | 378 sps] R=-1588.0 C=  60 Safe=91.46% SAI=0.338 Jain=1.000 PeakMF=0.695
+[Ep  2350 | Step 1,128,000/2,000,000 | 378 sps] R=-1773.7 C= 101 Safe=84.17% SAI=0.336 Jain=1.000 PeakMF=0.697
+[Ep  2400 | Step 1,152,000/2,000,000 | 378 sps] R=-1357.1 C=  11 Safe=97.71% SAI=0.337 Jain=1.000 PeakMF=0.693
+[Ep  2450 | Step 1,176,000/2,000,000 | 378 sps] R=-1336.5 C=  10 Safe=97.92% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2500 | Step 1,200,000/2,000,000 | 378 sps] R=-1757.6 C=  97 Safe=83.33% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2550 | Step 1,224,000/2,000,000 | 378 sps] R=-1338.0 C=  10 Safe=98.12% SAI=0.336 Jain=1.000 PeakMF=0.695
+[Ep  2600 | Step 1,248,000/2,000,000 | 378 sps] R=-1337.9 C=  12 Safe=97.92% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2650 | Step 1,272,000/2,000,000 | 378 sps] R=-1792.5 C= 105 Safe=86.25% SAI=0.336 Jain=1.000 PeakMF=0.697
+[Ep  2700 | Step 1,296,000/2,000,000 | 378 sps] R=-1346.1 C=  15 Safe=97.29% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2750 | Step 1,320,000/2,000,000 | 378 sps] R=-1426.1 C=  30 Safe=95.21% SAI=0.336 Jain=1.000 PeakMF=0.694
+[Ep  2800 | Step 1,344,000/2,000,000 | 378 sps] R=-1303.0 C=   6 Safe=98.75% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  2850 | Step 1,368,000/2,000,000 | 378 sps] R=-1337.9 C=   6 Safe=99.17% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  2900 | Step 1,392,000/2,000,000 | 378 sps] R=-1432.6 C=  34 Safe=93.75% SAI=0.336 Jain=1.000 PeakMF=0.697
+[Ep  2950 | Step 1,416,000/2,000,000 | 378 sps] R=-1381.6 C=  22 Safe=97.08% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  3000 | Step 1,440,000/2,000,000 | 378 sps] R=-1537.7 C=  54 Safe=91.67% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  3050 | Step 1,464,000/2,000,000 | 378 sps] R=-1662.3 C=  79 Safe=89.17% SAI=0.336 Jain=1.000 PeakMF=0.693
+[Ep  3100 | Step 1,488,000/2,000,000 | 378 sps] R=-1388.5 C=  20 Safe=96.46% SAI=0.337 Jain=1.000 PeakMF=0.693
+[Ep  3150 | Step 1,512,000/2,000,000 | 378 sps] R=-1391.3 C=  21 Safe=96.88% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  3200 | Step 1,536,000/2,000,000 | 378 sps] R=-1411.6 C=  28 Safe=95.21% SAI=0.336 Jain=1.000 PeakMF=0.694
+[Ep  3250 | Step 1,560,000/2,000,000 | 378 sps] R=-1493.1 C=  46 Safe=91.67% SAI=0.336 Jain=1.000 PeakMF=0.697
+[Ep  3300 | Step 1,584,000/2,000,000 | 378 sps] R=-1345.5 C=  11 Safe=98.12% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  3350 | Step 1,608,000/2,000,000 | 378 sps] R=-1343.0 C=  16 Safe=96.88% SAI=0.336 Jain=1.000 PeakMF=0.695
+[Ep  3400 | Step 1,632,000/2,000,000 | 378 sps] R=-1392.2 C=  26 Safe=95.42% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  3450 | Step 1,656,000/2,000,000 | 378 sps] R=-1312.5 C=   6 Safe=99.17% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  3500 | Step 1,680,000/2,000,000 | 378 sps] R=-1390.1 C=  24 Safe=96.25% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  3550 | Step 1,704,000/2,000,000 | 378 sps] R=-1417.6 C=  27 Safe=95.62% SAI=0.337 Jain=1.000 PeakMF=0.692
+[Ep  3600 | Step 1,728,000/2,000,000 | 378 sps] R=-1335.5 C=  12 Safe=98.33% SAI=0.337 Jain=1.000 PeakMF=0.695
+[Ep  3650 | Step 1,752,000/2,000,000 | 378 sps] R=-1544.4 C=  56 Safe=90.21% SAI=0.337 Jain=1.000 PeakMF=0.697
+[Ep  3700 | Step 1,776,000/2,000,000 | 378 sps] R=-1311.8 C=   7 Safe=98.54% SAI=0.336 Jain=1.000 PeakMF=0.693
+[Ep  3750 | Step 1,800,000/2,000,000 | 378 sps] R=-1305.2 C=   5 Safe=99.17% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  3800 | Step 1,824,000/2,000,000 | 378 sps] R=-1364.4 C=  16 Safe=97.08% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  3850 | Step 1,848,000/2,000,000 | 378 sps] R=-1323.5 C=   7 Safe=98.54% SAI=0.337 Jain=1.000 PeakMF=0.694
+[Ep  3900 | Step 1,872,000/2,000,000 | 378 sps] R=-1388.6 C=  23 Safe=95.83% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  3950 | Step 1,896,000/2,000,000 | 378 sps] R=-1402.9 C=  28 Safe=94.58% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  4000 | Step 1,920,000/2,000,000 | 378 sps] R=-1442.4 C=  36 Safe=94.17% SAI=0.337 Jain=1.000 PeakMF=0.697
+[Ep  4050 | Step 1,944,000/2,000,000 | 378 sps] R=-1348.4 C=  16 Safe=97.71% SAI=0.336 Jain=1.000 PeakMF=0.696
+[Ep  4100 | Step 1,968,000/2,000,000 | 378 sps] R=-1341.2 C=  13 Safe=97.50% SAI=0.337 Jain=1.000 PeakMF=0.696
+[Ep  4150 | Step 1,992,000/2,000,000 | 378 sps] R=-1388.1 C=  25 Safe=95.21% SAI=0.337 Jain=1.000 PeakMF=0.697
+
+============================================================
+Training complete: 4167 episodes, 2,000,160 steps
+Best reward: -1276.6
+Wall time: 1.47 hours
+Checkpoint: checkpoints/hcmarl_anchor/seed_9/checkpoint_final.pt
+============================================================

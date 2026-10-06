@@ -1,0 +1,57 @@
+2026-05-06 11:57:14 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+2026-05-06 11:58:19 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+Using device: cuda
+Path G: loading pre-computed profiles from /root/hcmarl_project/config/pathg_profiles.json
+Generating demonstrations from calibrated profiles (Eq 35 controller)...
+  Generated 102 demonstrations from 34 workers
+  HELDOUT_NLL model selection for K:
+    K=1: heldout_nll=1330728.5000
+    K=2: heldout_nll=17292.4121
+    K=3: heldout_nll=57228.0195
+    K=4: heldout_nll=3538.0039
+    K=5: heldout_nll=1965432192.0000
+  Selected K=4 (lowest heldout_nll=3538.0039)
+
+--- MMICRL Type Discovery Results ---
+  Demonstrations: 102
+  Types discovered: 4
+  Type proportions: ['0.33', '0.25', '0.33', '0.09']
+  Mutual information I(tau;z): 0.0000
+  Objective value: 0.0000
+  Learned thresholds per type (raw):
+    Type 0: {shoulder: 0.186}
+    Type 1: {shoulder: 0.311}
+    Type 2: {shoulder: 0.239}
+    Type 3: {shoulder: 0.197}
+  WARNING: MI (0.0000) < 0.01 -- latent types are behaviorally indistinguishable on this demo set. Effective per-worker theta will fall back to config floors (no MMICRL contribution). Consider multi-muscle demos or lambda1 tuning to restore discrimination.
+  Results saved to logs/continuous_probe_smoke/seed_0/mmicrl/mmicrl_results.json
+Using MMICRL-learned thresholds for 6 workers (4 types, rescaled into [floor,1]; floors: {'shoulder': 0.7, 'ankle': 0.8, 'knee': 0.6, 'elbow': 0.45, 'trunk': 0.65, 'grip': 0.45})
+  Effective per-worker theta_max: {'worker_0': {'shoulder': 0.7}, 'worker_1': {'shoulder': 0.7}, 'worker_2': {'shoulder': 0.7}, 'worker_3': {'shoulder': 0.7}, 'worker_4': {'shoulder': 0.7}, 'worker_5': {'shoulder': 0.7}}
+============================================================
+HC-MARL Training: HC-MARL (MAPPO + ECBF + NSWF)
+Seed: 0 | Device: cuda | Workers: 6
+Total steps: 5,000 | Eval every: 5,000
+Checkpoint dir: checkpoints/continuous_probe_smoke/seed_0
+============================================================
+Traceback (most recent call last):
+  File "/root/hcmarl_project/scripts/train.py", line 1255, in <module>
+    main()
+  File "/root/hcmarl_project/scripts/train.py", line 1246, in main
+    train(cfg, args.method, args.seed, device, args.resume, mmicrl_results, mmicrl_model,
+  File "/root/hcmarl_project/scripts/train.py", line 883, in train
+    update_info = agent.update() or {}
+                  ^^^^^^^^^^^^^^
+  File "/root/hcmarl_project/hcmarl/agents/hcmarl_agent.py", line 181, in update
+    return self.mappo.update() or {}
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/hcmarl_project/hcmarl/agents/mappo.py", line 341, in update
+    new_lp, entropy = self.actor.evaluate(obs, acts)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/hcmarl_project/hcmarl/agents/networks.py", line 40, in evaluate
+    return dist.log_prob(action), dist.entropy()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/hcmarl_project/venv/lib/python3.12/site-packages/torch/distributions/categorical.py", line 139, in log_prob
+    self._validate_sample(value)
+  File "/root/hcmarl_project/venv/lib/python3.12/site-packages/torch/distributions/distribution.py", line 301, in _validate_sample
+    raise ValueError(
+ValueError: Value is not broadcastable with batch_shape+event_shape: torch.Size([2880, 6]) vs torch.Size([2880]).

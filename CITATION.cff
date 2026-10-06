@@ -13,6 +13,6 @@ authors:
     affiliation: "USAR, Guru Gobind Singh Indraprastha University, Delhi, India"
   - given-names: "Arshpreet"
     family-names: "Kaur"
-    affiliation: "Department of Computer Science and Engineering, Manipal University, Jaipur, India"
-abstract: "Code accompanying the paper 'Fatigue-Aware Cooperative Multi-Agent RL on a Calibrated 3CC-r Warehouse Benchmark: An Empirical Audit of Four Modular Components'."
+    affiliation: "Department of Computer Science and Engineering, Manipal University Jaipur, Jaipur, India"
+abstract: "Code accompanying the paper 'Fatigue-Aware Cooperative Multi-Agent Reinforcement Learning on a Simulated Warehouse Benchmark: An Empirical Audit of Four Modular Components'."
 license: MIT

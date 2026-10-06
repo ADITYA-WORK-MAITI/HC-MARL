@@ -1,0 +1,44 @@
+2026-05-06 13:55:29 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+2026-05-06 13:56:18 | hcmarl.utils | INFO | HIGH determinism: cudnn.deterministic=True, torch.use_deterministic_algorithms(True), matmul=highest, CUBLAS_WORKSPACE_CONFIG=:4096:8 (EXP3-Part-1-equivalent reproducibility)
+Using device: cuda
+Path G: loading pre-computed profiles from /root/hcmarl_project/config/pathg_profiles.json
+Generating demonstrations from calibrated profiles (Eq 35 controller)...
+  Generated 102 demonstrations from 34 workers
+  HELDOUT_NLL model selection for K:
+    K=1: heldout_nll=19965.6758
+    K=2: heldout_nll=139810.2969
+    K=3: heldout_nll=161.2346
+    K=4: heldout_nll=-1.4964
+    K=5: heldout_nll=647098.2500
+  Selected K=4 (lowest heldout_nll=-1.4964)
+
+--- MMICRL Type Discovery Results ---
+  Demonstrations: 102
+  Types discovered: 4
+  Type proportions: ['0.15', '0.18', '0.46', '0.22']
+  Mutual information I(tau;z): 1.2759
+  Objective value: 1.2759
+  Learned thresholds per type (raw):
+    Type 0: {shoulder: 0.310}
+    Type 1: {shoulder: 0.290}
+    Type 2: {shoulder: 0.224}
+    Type 3: {shoulder: 0.163}
+  Results saved to logs/continuous_probe/seed_2/mmicrl/mmicrl_results.json
+Using MMICRL-learned thresholds for 6 workers (4 types, rescaled into [floor,1]; floors: {'shoulder': 0.7, 'ankle': 0.8, 'knee': 0.6, 'elbow': 0.45, 'trunk': 0.65, 'grip': 0.45})
+  Effective per-worker theta_max: {'worker_0': {'shoulder': 0.999}, 'worker_1': {'shoulder': 0.9578063511371445}, 'worker_2': {'shoulder': 0.8235225504227014}, 'worker_3': {'shoulder': 0.8235225504227014}, 'worker_4': {'shoulder': 0.8235225504227014}, 'worker_5': {'shoulder': 0.7}}
+[action_mode] cfg.action_mode='continuous', method='hcmarl', env_action_mode='continuous'
+============================================================
+HC-MARL Training: HC-MARL (MAPPO + ECBF + NSWF)
+Seed: 2 | Device: cuda | Workers: 6
+Total steps: 50,000 | Eval every: 10,000
+Checkpoint dir: checkpoints/continuous_probe/seed_2
+============================================================
+[Ep    50 | Step    24,000/50,000 | 136 sps] R=-65676.0 C=2392 Safe=15.62% SAI=0.013 Jain=0.995 PeakMF=0.913
+[Ep   100 | Step    48,000/50,000 | 137 sps] R=-65579.6 C=2390 Safe=15.62% SAI=0.015 Jain=0.995 PeakMF=0.914
+
+============================================================
+Training complete: 105 episodes, 50,400 steps
+Best reward: -65563.0
+Wall time: 0.10 hours
+Checkpoint: checkpoints/continuous_probe/seed_2/checkpoint_final.pt
+============================================================

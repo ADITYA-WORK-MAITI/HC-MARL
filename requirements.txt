@@ -1,4 +1,4 @@
-# HC-MARL requirements (Python 3.10-3.13; tested on 3.13.3)
+# HC-MARL requirements (Python 3.10-3.12; the pinned numpy and scipy have no wheels for Python 3.13)
 
 # --- Numerical core ---
 numpy==1.26.4
